@@ -15,7 +15,7 @@ const Connextion: React.FC = () => {
 	return (
 		// @ts-ignore
 		<div className="d-flex flex-column justify-content-center align-items-center">
-			<form onSubmit={handleSubmit((data) => console.log(data))}>
+			<form onSubmit={handleSubmit((data: any) => console.log(data))}>
 				<div className="form-group my-4">
 					{/* eslint-disable-next-line jsx-a11y/label-has-associated-control */}
 					<label className="form-label" htmlFor="Nom" hidden>

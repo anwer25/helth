@@ -8,8 +8,8 @@ import './styles/index.sass';
 import TableauDeBord from './components/tableau-de-bord/tableauDeBord';
 
 const App: React.FC = () => (
-	<div className="container-fluid background conatiner-h text-center d-flex align-items-center justify-content-center">
-		{/* <Connextion></Connextion> */}
+	<div className="container-fluid background">
+		{/* <Connextion /> */}
 		<TableauDeBord />
 	</div>
 );
