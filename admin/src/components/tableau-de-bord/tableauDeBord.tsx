@@ -7,7 +7,8 @@ import journaux from '../../images/icons/Technology_Notepad_1 copy 5 1.svg';
 import Footer from '../footer';
 import Header from '../header';
 
-// TODO: add add Link on evrey col and then add to it class Name (stretched-link)
+// TODO: add add Link on every col and then add to it class Name (stretched-link)
+// TODO: add padding to h5 where the Name is
 
 const TableauDeBord: React.FC = () => (
 	<div className="container d-flex flex-column justify-content-center align-items-center text-center min-vh-100">

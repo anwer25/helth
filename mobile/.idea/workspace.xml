@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="fc67ae1a-ad1f-4d3a-93a2-60720119402c" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../admin/src/components/utilisateur/utilisateur.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../admin/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../admin/src/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../admin/src/components/tableau-de-bord/tableauDeBord.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../admin/src/components/tableau-de-bord/tableauDeBord.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/appName/.buckconfig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/appName/.editorconfig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/appName/.eslintrc.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/appName/.gitattributes" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/appName/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/appName/.prettierrc.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/appName/.watchmanconfig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/appName/App.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/appName/__tests__/App-test.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/appName/android/app/_BUCK" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/appName/android/app/build.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/appName/android/app/build_defs.bzl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/appName/android/app/debug.keystore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/appName/android/app/proguard-rules.pro" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/appName/android/app/src/debug/AndroidManifest.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/appName/android/app/src/debug/java/com/appname/ReactNativeFlipper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/appName/android/app/src/main/AndroidManifest.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/appName/android/app/src/main/java/com/appname/MainActivity.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/appName/android/app/src/main/java/com/appname/MainApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/appName/android/app/src/main/res/mipmap-hdpi/ic_launcher.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/appName/android/app/src/main/res/mipmap-hdpi/ic_launcher_round.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/appName/android/app/src/main/res/mipmap-mdpi/ic_launcher.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/appName/android/app/src/main/res/mipmap-mdpi/ic_launcher_round.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/appName/android/app/src/main/res/mipmap-xhdpi/ic_launcher.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/appName/android/app/src/main/res/mipmap-xhdpi/ic_launcher_round.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/appName/android/app/src/main/res/mipmap-xxhdpi/ic_launcher.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/appName/android/app/src/main/res/mipmap-xxhdpi/ic_launcher_round.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/appName/android/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/appName/android/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/appName/android/app/src/main/res/values/strings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/appName/android/app/src/main/res/values/styles.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/appName/android/build.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/appName/android/gradle.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/appName/android/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/appName/android/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/appName/android/gradlew" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/appName/android/gradlew.bat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/appName/android/settings.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/appName/app.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/appName/babel.config.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/appName/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/appName/ios/Podfile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/appName/ios/appName.xcodeproj/project.pbxproj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/appName/ios/appName.xcodeproj/xcshareddata/xcschemes/appName.xcscheme" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/appName/ios/appName/AppDelegate.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/appName/ios/appName/AppDelegate.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/appName/ios/appName/Images.xcassets/AppIcon.appiconset/Contents.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/appName/ios/appName/Images.xcassets/Contents.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/appName/ios/appName/Info.plist" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/appName/ios/appName/LaunchScreen.storyboard" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/appName/ios/appName/main.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/appName/ios/appNameTests/Info.plist" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/appName/ios/appNameTests/appNameTests.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/appName/metro.config.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/appName/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/appName/tsconfig.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/appName/yarn.lock" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectId" id="21mXJWS7r6DEMWVPSXfxrnG9xwN" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="fc67ae1a-ad1f-4d3a-93a2-60720119402c" name="Changes" comment="" />
+      <created>1638547187442</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1638547187442</updated>
+      <workItem from="1638547193179" duration="15000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>
