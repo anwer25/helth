@@ -4,9 +4,10 @@ import {View, ImageBackground, Image} from 'react-native';
 import styles from './src/resources/styles';
 // eslint-disable-next-line import/extensions,import/no-unresolved
 import {backgroundImage, logo_h, logo_b} from './src/resources/images';
+import Utilisateur from './src/components/Admin/utilisateur';
 // eslint-disable-next-line import/extensions
 // import Connextion from './src/components/connextion';
-import Admin from './src/components/admin';
+// import Admin from './src/components/Admin/admin';
 
 const App = function () {
 	return (
@@ -16,10 +17,11 @@ const App = function () {
 				source={backgroundImage}
 				resizeMode="cover"
 				style={styles.bgImage}>
-				<Admin />
+				{/* <Admin /> */}
 				{/* <View style={[styles.center, styles.container]}> */}
 				{/*	 <Connextion /> */}
 				{/* </View> */}
+				<Utilisateur />
 				<View style={[styles.footer, styles.row]}>
 					<Image source={logo_h} style={styles.logo} />
 					<Image

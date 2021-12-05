@@ -24,6 +24,9 @@ const Styles = StyleSheet.create({
 	justifyEnd: {
 		justifyContent: 'flex-end',
 	},
+	alignEnd: {
+		alignItems: 'flex-end',
+	},
 	alignCenter: {
 		alignItems: 'center',
 	},
@@ -32,6 +35,13 @@ const Styles = StyleSheet.create({
 	},
 	col: {
 		flexDirection: 'column',
+	},
+	dorpDownMenu: {
+		backgroundColor: 'rgba(255,255,255,0.8)',
+	},
+	dropDownText: {
+		marginRight: 9,
+		fontSize: 15,
 	},
 	input: {
 		color: '#000',
