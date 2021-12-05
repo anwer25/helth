@@ -24,6 +24,12 @@ const Styles = StyleSheet.create({
 	justifyEnd: {
 		justifyContent: 'flex-end',
 	},
+	justifyStart: {
+		justifyContent: 'flex-start',
+	},
+	justifySpaceBet: {
+		justifyContent: 'space-between',
+	},
 	alignEnd: {
 		alignItems: 'flex-end',
 	},
@@ -36,8 +42,9 @@ const Styles = StyleSheet.create({
 	col: {
 		flexDirection: 'column',
 	},
-	dorpDownMenu: {
-		backgroundColor: 'rgba(255,255,255,0.8)',
+	dropDownTextOptions: {
+		marginLeft: 9,
+		fontSize: 15,
 	},
 	dropDownText: {
 		marginRight: 9,
@@ -80,6 +87,19 @@ const Styles = StyleSheet.create({
 		width: 200,
 		borderRadius: 120,
 	},
+	navButton: {
+		backgroundColor: '#fff',
+		padding: 5,
+		marginTop: 10,
+		borderBottomColor: '#C8C8C8',
+		borderLeftColor: '#C8C8C8',
+		borderRightColor: '#C8C8C8',
+		borderTopColor: '#C8C8C8',
+		borderWidth: 1,
+		width: 150,
+		borderRadius: 100,
+		alignItems: 'center',
+	},
 	footer: {
 		justifyContent: 'center',
 	},
@@ -108,6 +128,10 @@ const Styles = StyleSheet.create({
 	},
 	menuCollBottomM: {
 		marginBottom: 15,
+	},
+	pageLogo: {
+		height: 300,
+		width: 300,
 	},
 });
 

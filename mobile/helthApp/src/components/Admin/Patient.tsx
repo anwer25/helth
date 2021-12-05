@@ -3,9 +3,9 @@ import {View, Text, TouchableOpacity, Image} from 'react-native';
 // eslint-disable-next-line import/extensions,import/no-unresolved
 import styles from '../../resources/styles';
 // eslint-disable-next-line import/extensions,import/no-unresolved
-import {utilisateurMenuLogo, menu} from '../../resources/images';
+import {patient, menu} from '../../resources/images';
 
-const Utilisateur: React.FC = function () {
+const Patient: React.FC = function () {
 	const [shouldShow, setShow] = useState(false);
 	const [shouldShowOptions, setShouldShowOptions] = useState(false);
 	return (
@@ -26,10 +26,7 @@ const Utilisateur: React.FC = function () {
 							setShow(false);
 							setShouldShowOptions(!shouldShowOptions);
 						}}>
-						<Image
-							source={utilisateurMenuLogo}
-							style={{marginLeft: -14}}
-						/>
+						<Image source={patient} style={{marginLeft: -14}} />
 					</TouchableOpacity>
 				</View>
 				<View>
@@ -75,4 +72,4 @@ const Utilisateur: React.FC = function () {
 	);
 };
 
-export default Utilisateur;
+export default Patient;

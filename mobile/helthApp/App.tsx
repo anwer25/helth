@@ -4,10 +4,13 @@ import {View, ImageBackground, Image} from 'react-native';
 import styles from './src/resources/styles';
 // eslint-disable-next-line import/extensions,import/no-unresolved
 import {backgroundImage, logo_h, logo_b} from './src/resources/images';
-import Utilisateur from './src/components/Admin/utilisateur';
+import Journaux from './src/components/Admin/journaux';
+// import Utilisateur from './src/components/Admin/utilisateur';
 // eslint-disable-next-line import/extensions
-// import Connextion from './src/components/connextion';
+// import Connexion from './src/components/connexion';
 // import Admin from './src/components/Admin/admin';
+// import Patient from './src/components/Admin/Patient';
+// import Opération from './src/components/Admin/opération';
 
 const App = function () {
 	return (
@@ -19,9 +22,12 @@ const App = function () {
 				style={styles.bgImage}>
 				{/* <Admin /> */}
 				{/* <View style={[styles.center, styles.container]}> */}
-				{/*	 <Connextion /> */}
+				{/*	 <Connexion /> */}
 				{/* </View> */}
-				<Utilisateur />
+				{/* <Utilisateur /> */}
+				{/* <Patient /> */}
+				{/* <Opération /> */}
+				<Journaux />
 				<View style={[styles.footer, styles.row]}>
 					<Image source={logo_h} style={styles.logo} />
 					<Image

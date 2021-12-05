@@ -9,7 +9,7 @@ const connexion = (Nom: string, mtp: string): void => {
 	console.log(Nom, mtp);
 };
 
-const Connextion: React.FC = function () {
+const Connexion: React.FC = function () {
 	const [nom, définirNom] = useState('');
 	const [mtp, définirMtp] = useState('');
 	return (
@@ -53,4 +53,4 @@ const Connextion: React.FC = function () {
 	);
 };
 
-export default Connextion;
+export default Connexion;

@@ -18,9 +18,8 @@ const Admin: React.FC = function () {
 				</TouchableOpacity>
 			</View>
 			{shouldShow ? (
-				<View style={[styles.justifyEnd]}>
-					<TouchableOpacity
-						style={[styles.alignEnd, styles.dorpDownMenu]}>
+				<View style={[styles.justifyEnd, styles.alignEnd]}>
+					<TouchableOpacity style={[styles.navButton]}>
 						<Text style={[styles.dropDownText]}>Déconnecter</Text>
 					</TouchableOpacity>
 				</View>
