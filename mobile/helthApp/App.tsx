@@ -6,6 +6,7 @@ import styles from './src/resources/styles';
 import {backgroundImage, logo_h, logo_b} from './src/resources/images';
 // eslint-disable-next-line import/extensions
 // import Connextion from './src/components/connextion';
+import Admin from './src/components/admin';
 
 const App = function () {
 	return (
@@ -15,9 +16,10 @@ const App = function () {
 				source={backgroundImage}
 				resizeMode="cover"
 				style={styles.bgImage}>
-				<View style={[styles.center, styles.container]}>
-					{/* <Connextion /> */}
-				</View>
+				<Admin />
+				{/* <View style={[styles.center, styles.container]}> */}
+				{/*	 <Connextion /> */}
+				{/* </View> */}
 				<View style={[styles.footer, styles.row]}>
 					<Image source={logo_h} style={styles.logo} />
 					<Image
