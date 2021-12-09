@@ -1,12 +1,15 @@
-import React, {useState} from 'react';
+import React, {useState, useContext} from 'react';
 import {Image, Text, TouchableOpacity, View} from 'react-native';
+import {authContext} from '../navigation/authProvider.tsx';
+
 // eslint-disable-next-line import/extensions,import/no-unresolved
-import styles from '../../resources/styles';
+import styles from '../ressources/styles';
 // eslint-disable-next-line import/extensions,import/no-unresolved
-import {journaux, menu, salle, user, users} from '../../resources/images';
+import {journaux, menu, salle, user, users} from '../ressources/images';
 
 const Admin: React.FC = function () {
 	const [shouldShow, setShow] = useState(false);
+	const {logout} = useContext(authContext);
 	return (
 		// eslint-disable-next-line react/jsx-filename-extension
 		<View style={[styles.container, styles.col]}>
@@ -19,7 +22,9 @@ const Admin: React.FC = function () {
 			</View>
 			{shouldShow ? (
 				<View style={[styles.justifyEnd, styles.alignEnd]}>
-					<TouchableOpacity style={[styles.navButton]}>
+					<TouchableOpacity
+						style={[styles.navButton]}
+						onPress={logout}>
 						<Text style={[styles.dropDownText]}>Déconnecter</Text>
 					</TouchableOpacity>
 				</View>

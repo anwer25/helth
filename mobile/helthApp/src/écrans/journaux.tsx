@@ -1,11 +1,11 @@
 import React, {useState} from 'react';
 import {View, Text, TouchableOpacity, Image} from 'react-native';
 // eslint-disable-next-line import/extensions,import/no-unresolved
-import styles from '../../resources/styles';
+import styles from '../ressources/styles';
 // eslint-disable-next-line import/extensions,import/no-unresolved
-import {utilisateurMenuLogo, menu} from '../../resources/images';
+import {_journaux, menu} from '../ressources/images';
 
-const Utilisateur: React.FC = function () {
+const Journaux: React.FC = function () {
 	const [shouldShow, setShow] = useState(false);
 	const [shouldShowOptions, setShouldShowOptions] = useState(false);
 	return (
@@ -26,10 +26,7 @@ const Utilisateur: React.FC = function () {
 							setShow(false);
 							setShouldShowOptions(!shouldShowOptions);
 						}}>
-						<Image
-							source={utilisateurMenuLogo}
-							style={{marginLeft: -14}}
-						/>
+						<Image source={_journaux} style={{marginLeft: -14}} />
 					</TouchableOpacity>
 				</View>
 				<View>
@@ -54,16 +51,6 @@ const Utilisateur: React.FC = function () {
 				<View>
 					<TouchableOpacity style={[styles.navButton]}>
 						<Text style={[styles.dropDownTextOptions]}>
-							Ajouter
-						</Text>
-					</TouchableOpacity>
-					<TouchableOpacity style={[styles.navButton]}>
-						<Text style={[styles.dropDownTextOptions]}>
-							Modifier
-						</Text>
-					</TouchableOpacity>
-					<TouchableOpacity style={[styles.navButton]}>
-						<Text style={[styles.dropDownTextOptions]}>
 							Supprimer
 						</Text>
 					</TouchableOpacity>
@@ -75,4 +62,4 @@ const Utilisateur: React.FC = function () {
 	);
 };
 
-export default Utilisateur;
+export default Journaux;

@@ -1,11 +1,11 @@
 import React, {useState} from 'react';
 import {View, Text, TouchableOpacity, Image} from 'react-native';
 // eslint-disable-next-line import/extensions,import/no-unresolved
-import styles from '../../resources/styles';
+import styles from '../ressources/styles';
 // eslint-disable-next-line import/extensions,import/no-unresolved
-import {opération, menu} from '../../resources/images';
+import {utilisateurMenuLogo, menu} from '../ressources/images';
 
-const Opération: React.FC = function () {
+const Utilisateur: React.FC = function () {
 	const [shouldShow, setShow] = useState(false);
 	const [shouldShowOptions, setShouldShowOptions] = useState(false);
 	return (
@@ -26,7 +26,10 @@ const Opération: React.FC = function () {
 							setShow(false);
 							setShouldShowOptions(!shouldShowOptions);
 						}}>
-						<Image source={opération} style={{marginLeft: -14}} />
+						<Image
+							source={utilisateurMenuLogo}
+							style={{marginLeft: -14}}
+						/>
 					</TouchableOpacity>
 				</View>
 				<View>
@@ -72,4 +75,4 @@ const Opération: React.FC = function () {
 	);
 };
 
-export default Opération;
+export default Utilisateur;

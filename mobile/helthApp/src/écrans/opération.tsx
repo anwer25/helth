@@ -1,11 +1,11 @@
 import React, {useState} from 'react';
 import {View, Text, TouchableOpacity, Image} from 'react-native';
 // eslint-disable-next-line import/extensions,import/no-unresolved
-import styles from '../../resources/styles';
+import styles from '../ressources/styles';
 // eslint-disable-next-line import/extensions,import/no-unresolved
-import {patient, menu} from '../../resources/images';
+import {opération, menu} from '../ressources/images';
 
-const Patient: React.FC = function () {
+const Opération: React.FC = function () {
 	const [shouldShow, setShow] = useState(false);
 	const [shouldShowOptions, setShouldShowOptions] = useState(false);
 	return (
@@ -26,7 +26,7 @@ const Patient: React.FC = function () {
 							setShow(false);
 							setShouldShowOptions(!shouldShowOptions);
 						}}>
-						<Image source={patient} style={{marginLeft: -14}} />
+						<Image source={opération} style={{marginLeft: -14}} />
 					</TouchableOpacity>
 				</View>
 				<View>
@@ -72,4 +72,4 @@ const Patient: React.FC = function () {
 	);
 };
 
-export default Patient;
+export default Opération;

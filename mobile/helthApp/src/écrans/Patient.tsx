@@ -1,11 +1,11 @@
 import React, {useState} from 'react';
 import {View, Text, TouchableOpacity, Image} from 'react-native';
 // eslint-disable-next-line import/extensions,import/no-unresolved
-import styles from '../../resources/styles';
+import styles from '../ressources/styles';
 // eslint-disable-next-line import/extensions,import/no-unresolved
-import {_journaux, menu} from '../../resources/images';
+import {patient, menu} from '../ressources/images';
 
-const Journaux: React.FC = function () {
+const Patient: React.FC = function () {
 	const [shouldShow, setShow] = useState(false);
 	const [shouldShowOptions, setShouldShowOptions] = useState(false);
 	return (
@@ -26,7 +26,7 @@ const Journaux: React.FC = function () {
 							setShow(false);
 							setShouldShowOptions(!shouldShowOptions);
 						}}>
-						<Image source={_journaux} style={{marginLeft: -14}} />
+						<Image source={patient} style={{marginLeft: -14}} />
 					</TouchableOpacity>
 				</View>
 				<View>
@@ -51,6 +51,16 @@ const Journaux: React.FC = function () {
 				<View>
 					<TouchableOpacity style={[styles.navButton]}>
 						<Text style={[styles.dropDownTextOptions]}>
+							Ajouter
+						</Text>
+					</TouchableOpacity>
+					<TouchableOpacity style={[styles.navButton]}>
+						<Text style={[styles.dropDownTextOptions]}>
+							Modifier
+						</Text>
+					</TouchableOpacity>
+					<TouchableOpacity style={[styles.navButton]}>
+						<Text style={[styles.dropDownTextOptions]}>
 							Supprimer
 						</Text>
 					</TouchableOpacity>
@@ -62,4 +72,4 @@ const Journaux: React.FC = function () {
 	);
 };
 
-export default Journaux;
+export default Patient;

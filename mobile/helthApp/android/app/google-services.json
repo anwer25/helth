@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "430124001949",
+    "project_id": "helthapp-e8dcf",
+    "storage_bucket": "helthapp-e8dcf.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:430124001949:android:11140c1b9d860b50180274",
+        "android_client_info": {
+          "package_name": "com.helthapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "430124001949-2fpbt21bhnfnnge53osqem0vlosuspcp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAFyeJxKepPoyrSqn50QDtKluKtOyKaf04"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "430124001949-2fpbt21bhnfnnge53osqem0vlosuspcp.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
