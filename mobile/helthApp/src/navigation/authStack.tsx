@@ -6,7 +6,9 @@ const Stack = createStackNavigator();
 
 const AuthStack: React.FC = function () {
 	return (
-		<Stack.Navigator initialRouteName="connexion">
+		<Stack.Navigator
+			screenOptions={{headerShown: false}}
+			initialRouteName="connexion">
 			<Stack.Screen name="connexion" component={Connexion} />
 		</Stack.Navigator>
 	);
