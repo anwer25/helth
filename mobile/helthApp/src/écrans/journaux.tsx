@@ -1,15 +1,12 @@
 import React, {useState} from 'react';
 import {View, Text, TouchableOpacity, Image} from 'react-native';
-// eslint-disable-next-line import/extensions,import/no-unresolved
 import styles from '../ressources/styles';
-// eslint-disable-next-line import/extensions,import/no-unresolved
 import {_journaux, menu} from '../ressources/images';
 
 const Journaux: React.FC = function () {
 	const [shouldShow, setShow] = useState(false);
 	const [shouldShowOptions, setShouldShowOptions] = useState(false);
 	return (
-		// eslint-disable-next-line react/jsx-filename-extension
 		<View style={[styles.container, styles.col]}>
 			<View
 				style={[

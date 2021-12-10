@@ -16,5 +16,10 @@ module.exports = {
 		sourceType: 'module',
 	},
 	plugins: ['react', 'prettier'],
-	rules: {},
+	rules: {
+		'react/jsx-filename-extension': [1, {extensions: ['.tsx', '.jsx']}],
+		'import/extensions': [0],
+		'import/no-unresolved': [0],
+		'react/jsx-no-constructed-context-values': [0],
+	},
 };

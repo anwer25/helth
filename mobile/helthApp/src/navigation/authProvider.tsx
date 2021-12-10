@@ -6,10 +6,7 @@ export const authContext = createContext({});
 // @ts-ignore
 const AuthProvider = function ({children}) {
 	const [user, setUser] = useState(null);
-	// @ts-ignore
 	return (
-		// @ts-ignore
-		// eslint-disable-next-line react/jsx-filename-extension
 		<authContext.Provider
 			value={{
 				user,
