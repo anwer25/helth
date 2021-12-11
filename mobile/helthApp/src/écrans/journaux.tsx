@@ -1,11 +1,13 @@
-import React, {useState} from 'react';
+import React, {useState, useContext} from 'react';
 import {View, Text, TouchableOpacity, Image} from 'react-native';
+import {authContext} from '../navigation/authProvider';
 import styles from '../ressources/styles';
 import {_journaux, menu} from '../ressources/images';
 
 const Journaux: React.FC = function () {
 	const [shouldShow, setShow] = useState(false);
 	const [shouldShowOptions, setShouldShowOptions] = useState(false);
+	const {logout} = useContext(authContext);
 	return (
 		<View style={[styles.container, styles.col]}>
 			<View
@@ -39,7 +41,9 @@ const Journaux: React.FC = function () {
 			</View>
 			{shouldShow ? (
 				<View style={[styles.justifyEnd, styles.alignEnd]}>
-					<TouchableOpacity style={[styles.navButton]}>
+					<TouchableOpacity
+						style={[styles.navButton]}
+						onPress={logout}>
 						<Text style={[styles.dropDownText]}>Déconnecter</Text>
 					</TouchableOpacity>
 				</View>

@@ -12,13 +12,21 @@ const AuthProvider = function ({children}) {
 				user,
 				setUser,
 				login: async (email: string, password: string) => {
-					try {
-						await auth().signInWithEmailAndPassword(
-							email,
-							password,
-						);
-					} catch (e) {
-						console.log(e);
+					if (!email) {
+						console.error('email is empty');
+					} else if (!password) {
+						console.error('password is empty');
+					} else if (!email.includes('@')) {
+						console.error('inter valid email');
+					} else {
+						try {
+							await auth().signInWithEmailAndPassword(
+								email,
+								password,
+							);
+						} catch (e) {
+							console.error(e);
+						}
 					}
 				},
 				register: async (email: string, password: string) => {
@@ -28,7 +36,7 @@ const AuthProvider = function ({children}) {
 							password,
 						);
 					} catch (e) {
-						console.log(e);
+						console.error(e);
 					}
 				},
 				logout: async () => {

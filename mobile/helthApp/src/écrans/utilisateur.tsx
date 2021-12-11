@@ -1,15 +1,27 @@
-import React, {useState} from 'react';
+import React, {useState, useContext, useEffect} from 'react';
 import {View, Text, TouchableOpacity, Image} from 'react-native';
-// eslint-disable-next-line import/extensions,import/no-unresolved
+import firestore from '@react-native-firebase/firestore';
+import {authContext} from '../navigation/authProvider';
 import styles from '../ressources/styles';
-// eslint-disable-next-line import/extensions,import/no-unresolved
-import {utilisateurMenuLogo, menu} from '../ressources/images';
+import {utilisateurMenuLogo, menu, user} from '../ressources/images';
 
 const Utilisateur: React.FC = function () {
 	const [shouldShow, setShow] = useState(false);
 	const [shouldShowOptions, setShouldShowOptions] = useState(false);
+	const [users, setUsers] = useState<Array>([]);
+	const {logout} = useContext(authContext);
+	useEffect(() => {
+		async function getData() {
+			try {
+				const users = await firestore.collection('users').get();
+				console.error(users);
+				setUsers(users);
+			} catch (e) {
+				console.error(e);
+			}
+		}
+	}, []);
 	return (
-		// eslint-disable-next-line react/jsx-filename-extension
 		<View style={[styles.container, styles.col]}>
 			<View
 				style={[
@@ -45,7 +57,9 @@ const Utilisateur: React.FC = function () {
 			</View>
 			{shouldShow ? (
 				<View style={[styles.justifyEnd, styles.alignEnd]}>
-					<TouchableOpacity style={[styles.navButton]}>
+					<TouchableOpacity
+						style={[styles.navButton]}
+						onPress={lougout}>
 						<Text style={[styles.dropDownText]}>Déconnecter</Text>
 					</TouchableOpacity>
 				</View>
