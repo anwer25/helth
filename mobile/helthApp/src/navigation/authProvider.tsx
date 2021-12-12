@@ -6,22 +6,27 @@ export const authContext = createContext({});
 // @ts-ignore
 const AuthProvider = function ({children}) {
 	const [user, setUser] = useState(null);
-	// @ts-ignore
 	return (
-		// @ts-ignore
-		// eslint-disable-next-line react/jsx-filename-extension
 		<authContext.Provider
 			value={{
 				user,
 				setUser,
 				login: async (email: string, password: string) => {
-					try {
-						await auth().signInWithEmailAndPassword(
-							email,
-							password,
-						);
-					} catch (e) {
-						console.log(e);
+					if (!email) {
+						console.error('email is empty');
+					} else if (!password) {
+						console.error('password is empty');
+					} else if (!email.includes('@')) {
+						console.error('inter valid email');
+					} else {
+						try {
+							await auth().signInWithEmailAndPassword(
+								email,
+								password,
+							);
+						} catch (e) {
+							console.error(e);
+						}
 					}
 				},
 				register: async (email: string, password: string) => {
@@ -31,7 +36,7 @@ const AuthProvider = function ({children}) {
 							password,
 						);
 					} catch (e) {
-						console.log(e);
+						console.error(e);
 					}
 				},
 				logout: async () => {

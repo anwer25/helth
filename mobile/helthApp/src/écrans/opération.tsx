@@ -1,15 +1,15 @@
-import React, {useState} from 'react';
+/* eslint-disable react-native/no-inline-styles */
+import React, {useState, useContext} from 'react';
 import {View, Text, TouchableOpacity, Image} from 'react-native';
-// eslint-disable-next-line import/extensions,import/no-unresolved
+import {authContext} from '../navigation/authProvider';
 import styles from '../ressources/styles';
-// eslint-disable-next-line import/extensions,import/no-unresolved
 import {opération, menu} from '../ressources/images';
 
 const Opération: React.FC = function () {
 	const [shouldShow, setShow] = useState(false);
 	const [shouldShowOptions, setShouldShowOptions] = useState(false);
+	const {logout} = useContext(authContext);
 	return (
-		// eslint-disable-next-line react/jsx-filename-extension
 		<View style={[styles.container, styles.col]}>
 			<View
 				style={[
@@ -42,7 +42,7 @@ const Opération: React.FC = function () {
 			</View>
 			{shouldShow ? (
 				<View style={[styles.justifyEnd, styles.alignEnd]}>
-					<TouchableOpacity style={[styles.navButton]}>
+					<TouchableOpacity style={[styles.navButton]} onPress={logout}>
 						<Text style={[styles.dropDownText]}>Déconnecter</Text>
 					</TouchableOpacity>
 				</View>
