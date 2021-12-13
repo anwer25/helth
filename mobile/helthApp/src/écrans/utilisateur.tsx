@@ -4,6 +4,7 @@ import {firebase} from '@react-native-firebase/firestore';
 import {authContext} from '../navigation/authProvider';
 import styles from '../ressources/styles';
 import {utilisateurMenuLogo, menu} from '../ressources/images';
+import UseListData from '../components/hooks/listView';
 
 const Utilisateur: React.FC = function () {
 	const [shouldShow, setShow] = useState(false);
@@ -73,7 +74,9 @@ const Utilisateur: React.FC = function () {
 				</View>
 			) : null}
 			{/* TODO: add list here from fireBase dataBase */}
-			<View style={[styles.flexLg]} />
+			<View style={[styles.flexLg]}>
+				<UseListData collection="users" />
+			</View>
 		</View>
 	);
 };
