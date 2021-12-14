@@ -6,11 +6,14 @@ export const authContext = createContext({});
 // @ts-ignore
 const AuthProvider = function ({children}) {
 	const [user, setUser] = useState(null);
+	const [showW, setShowW] = useState(false);
 	return (
 		<authContext.Provider
 			value={{
 				user,
+				showW,
 				setUser,
+				setShowW,
 				login: async (email: string, password: string) => {
 					if (!email) {
 						console.error('email is empty');

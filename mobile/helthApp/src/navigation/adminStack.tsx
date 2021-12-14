@@ -22,6 +22,7 @@ const AdminStack = function () {
 			<Stack.Screen name="opération" component={Opération} />
 			<Stack.Screen name="patient" component={Patient} />
 			<Stack.Screen name="journaux" component={Journaux} />
+			{/* <Stack.Screen name="ajouter" component={Ajouter} /> */}
 		</Stack.Navigator>
 	);
 };
