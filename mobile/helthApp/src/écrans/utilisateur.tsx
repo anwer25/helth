@@ -1,26 +1,16 @@
 import React, {useState, useContext, useEffect} from 'react';
 import {View, Text, TouchableOpacity, Image} from 'react-native';
-import firestore from '@react-native-firebase/firestore';
+import {firebase} from '@react-native-firebase/firestore';
 import {authContext} from '../navigation/authProvider';
 import styles from '../ressources/styles';
-import {utilisateurMenuLogo, menu, user} from '../ressources/images';
+import {utilisateurMenuLogo, menu} from '../ressources/images';
+import UseListData from '../components/hooks/listView';
 
 const Utilisateur: React.FC = function () {
 	const [shouldShow, setShow] = useState(false);
 	const [shouldShowOptions, setShouldShowOptions] = useState(false);
-	const [users, setUsers] = useState<Array>([]);
 	const {logout} = useContext(authContext);
-	useEffect(() => {
-		async function getData() {
-			try {
-				const users = await firestore.collection('users').get();
-				console.error(users);
-				setUsers(users);
-			} catch (e) {
-				console.error(e);
-			}
-		}
-	}, []);
+	useEffect(() => {}, []);
 	return (
 		<View style={[styles.container, styles.col]}>
 			<View
@@ -59,7 +49,7 @@ const Utilisateur: React.FC = function () {
 				<View style={[styles.justifyEnd, styles.alignEnd]}>
 					<TouchableOpacity
 						style={[styles.navButton]}
-						onPress={lougout}>
+						onPress={logout}>
 						<Text style={[styles.dropDownText]}>Déconnecter</Text>
 					</TouchableOpacity>
 				</View>
@@ -84,7 +74,9 @@ const Utilisateur: React.FC = function () {
 				</View>
 			) : null}
 			{/* TODO: add list here from fireBase dataBase */}
-			<View style={[styles.flexLg]} />
+			<View style={[styles.flexLg]}>
+				<UseListData collection="users" />
+			</View>
 		</View>
 	);
 };
