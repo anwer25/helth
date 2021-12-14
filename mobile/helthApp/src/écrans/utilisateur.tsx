@@ -1,15 +1,15 @@
-import React, {useState, useContext, useEffect} from 'react';
-import {View, Text, TouchableOpacity, Image} from 'react-native';
-import {firebase} from '@react-native-firebase/firestore';
+import React, {useContext, useEffect, useState} from 'react';
+import {Image, Text, TouchableOpacity, View} from 'react-native';
 import {authContext} from '../navigation/authProvider';
 import styles from '../ressources/styles';
-import {utilisateurMenuLogo, menu} from '../ressources/images';
+import {menu, utilisateurMenuLogo} from '../ressources/images';
 import UseListData from '../components/hooks/listView';
+import Ajouter from './widgets/ajouter';
 
-const Utilisateur: React.FC = function () {
+const Utilisateur: React.FC = function ({navigation}) {
 	const [shouldShow, setShow] = useState(false);
 	const [shouldShowOptions, setShouldShowOptions] = useState(false);
-	const {logout} = useContext(authContext);
+	const {logout, showW, setShowW} = useContext(authContext);
 	useEffect(() => {}, []);
 	return (
 		<View style={[styles.container, styles.col]}>
@@ -56,7 +56,9 @@ const Utilisateur: React.FC = function () {
 			) : null}
 			{shouldShowOptions ? (
 				<View>
-					<TouchableOpacity style={[styles.navButton]}>
+					<TouchableOpacity
+						style={[styles.navButton]}
+						onPress={() => setShowW(true)}>
 						<Text style={[styles.dropDownTextOptions]}>
 							Ajouter
 						</Text>
@@ -75,6 +77,7 @@ const Utilisateur: React.FC = function () {
 			) : null}
 			{/* TODO: add list here from fireBase dataBase */}
 			<View style={[styles.flexLg]}>
+				<Ajouter />
 				<UseListData collection="users" />
 			</View>
 		</View>

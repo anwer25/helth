@@ -1,14 +1,17 @@
-import React, {useState, useEffect} from 'react';
-import {FlatList, Text, View} from 'react-native';
+import React, {useEffect, useState} from 'react';
+import {View} from 'react-native';
 import {firebase} from '@react-native-firebase/firestore';
 import Chargement from '../chargement';
+
+import styles from '../../ressources/styles';
+import TableView from '../table';
 
 const UseListData: React.FC = function ({collection}): JSX.Element {
 	const [loading, setLoading] = useState(true);
 	const [data, setData] = useState([]);
+	const tableHeader = ['Nom', 'UID', 'Email', 'Autorisations'];
 	useEffect(() => {
 		// TODO: fix side effect here
-		setData([]);
 		const sync = (async function getData() {
 			try {
 				const firebaseStore = firebase.firestore();
@@ -17,8 +20,8 @@ const UseListData: React.FC = function ({collection}): JSX.Element {
 					.get()
 					.then(querySnapShot => {
 						querySnapShot.forEach(snap => {
-							const data = snap.data();
-							setData(prevData => [...prevData, data]);
+							const dataArray = Object.values(snap.data());
+							setData(prevData => [...prevData, dataArray]);
 						});
 					});
 				setLoading(false);
@@ -31,20 +34,8 @@ const UseListData: React.FC = function ({collection}): JSX.Element {
 		return <Chargement />;
 	} else {
 		return (
-			<View>
-				<FlatList
-					data={data}
-					renderItem={items => {
-						return (
-							<>
-								<Text>{items.item.Name}</Text>
-								<Text>{items.item.UID}</Text>
-								<Text>{items.item.email}</Text>
-								<Text>{items.item.ruels}</Text>
-							</>
-						);
-					}}
-				/>
+			<View style={styles.container}>
+				<TableView header={tableHeader} data={data} />
 			</View>
 		);
 	}
