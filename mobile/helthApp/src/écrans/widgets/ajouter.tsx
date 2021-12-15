@@ -5,8 +5,12 @@ import {authContext} from '../../navigation/authProvider';
 
 const Ajouter: React.FC = function (): JSX.Element {
 	const [elémentSélectionné, définirSélectionné] = useState('');
+	const [nom, definirNom] = useState('');
+	const [email, definirEmail] = useState('');
+	const [mtp, definirMtp] = useState('');
+	const {showW, setShowW, register} = useContext(authContext);
+
 	const role = ['Protection', 'Réception'];
-	const {showW, setShowW} = useContext(authContext);
 	return (
 		<Modal
 			animationType="slide"
@@ -14,8 +18,9 @@ const Ajouter: React.FC = function (): JSX.Element {
 			transparent={false}
 			visible={showW}
 			onRequestClose={() => setShowW(!showW)}>
-			<TextInput placeholder="Nom" />
-			<TextInput placeholder="Mot de pass" />
+			<TextInput placeholder="Nom" onChangeText={definirNom} />
+			<TextInput placeholder="Email" onChangeText={definirEmail} />
+			<TextInput placeholder="Mot de pass" onChangeText={definirMtp} />
 			{/* @ts-ignore */}
 			<SelectDropdown
 				data={role}
@@ -23,7 +28,11 @@ const Ajouter: React.FC = function (): JSX.Element {
 				buttonTextAfterSelection={elément => elément}
 			/>
 			<Pressable onPress={() => setShowW(!showW)}>
-				<Text>Hello</Text>
+				<Text>Fermer</Text>
+			</Pressable>
+			<Pressable
+				onPress={() => register(email, mtp, nom, elémentSélectionné)}>
+				<Text>Sauvegarder</Text>
 			</Pressable>
 		</Modal>
 	);
