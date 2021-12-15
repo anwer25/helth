@@ -5,26 +5,23 @@
       <config />
     </shared>
   </component>
+  <component name="AndroidLogFilters">
+    <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="fc67ae1a-ad1f-4d3a-93a2-60720119402c" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/helthApp/src/components/table.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/helthApp/src/ressources/utils/types.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/helthApp/src/écrans/widgets/ajouter.tsx" afterDir="false" />
+    <list default="true" id="fc67ae1a-ad1f-4d3a-93a2-60720119402c" name="Changes" comment="add projects">
+      <change beforePath="$PROJECT_DIR$/.idea/mobile.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/mobile.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/helthApp/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/helthApp/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/helthApp/src/components/hooks/listView.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/helthApp/src/components/hooks/listView.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/helthApp/src/navigation/adminStack.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/helthApp/src/navigation/adminStack.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/helthApp/src/navigation/authProvider.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/helthApp/src/navigation/authProvider.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/helthApp/src/navigation/authStack.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/helthApp/src/navigation/authStack.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/helthApp/src/ressources/styles.ts" beforeDir="false" afterPath="$PROJECT_DIR$/helthApp/src/ressources/styles.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/helthApp/src/ressources/utilitaires/Dimensions/Dimensions.ts" beforeDir="false" afterPath="$PROJECT_DIR$/helthApp/src/ressources/utils/Dimensions/Dimensions.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/helthApp/src/écrans/utilisateur.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/helthApp/src/écrans/utilisateur.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/helthApp/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/helthApp/yarn.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/helthApp/src/écrans/widgets/ajouter.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/helthApp/src/écrans/widgets/ajouter.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CodeStyleSettingsInfer">
+    <option name="done" value="true" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -40,12 +37,13 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$/.." value="lab2" />
+        <entry key="$PROJECT_DIR$/.." value="lab3" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/helthApp/src/écrans/connexion.tsx" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/helthApp/src/components/chargement.tsx" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/helthApp/src/components/hooks/listView.tsx" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/helthApp/src/navigation/index.tsx" root0="SKIP_INSPECTION" />
@@ -55,7 +53,7 @@
     <setting file="file://$PROJECT_DIR$/helthApp/src/navigation/Routes.tsx" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/helthApp/src/navigation/authStack.tsx" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/helthApp/src/ressources/images.ts" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/helthApp/src/écrans/widgets/ajouter.tsx" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/helthApp/src/écrans/widgets/ajouter.tsx" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/helthApp/src/ressources/styles.ts" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/helthApp/src/écrans/utilisateur.tsx" root0="SKIP_INSPECTION" />
   </component>
@@ -65,6 +63,9 @@
   <component name="OptimizeOnSaveOptions">
     <option name="myRunOnSave" value="true" />
   </component>
+  <component name="ProjectCodeStyleSettingsMigration">
+    <option name="version" value="2" />
+  </component>
   <component name="ProjectId" id="21mXJWS7r6DEMWVPSXfxrnG9xwN" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -72,8 +73,10 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="code.cleanup.on.save" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
@@ -83,7 +86,10 @@
     <property name="node.js.selected.package.standard" value="" />
     <property name="nodejs_package_manager_path" value="yarn" />
     <property name="prettierjs.PrettierConfiguration.Package" value="$PROJECT_DIR$/helthApp/node_modules/prettier" />
-    <property name="settings.editor.selected.configurable" value="actions.on.save" />
+    <property name="project.structure.last.edited" value="Problems" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="ts.external.directory.path" value="$PROJECT_DIR$/helthApp/node_modules/typescript/lib" />
   </component>
   <component name="RecentsManager">
@@ -101,8 +107,17 @@
       <updated>1638547187442</updated>
       <workItem from="1638547193179" duration="15000" />
       <workItem from="1639475374460" duration="697000" />
-      <workItem from="1639476161628" duration="20976000" />
+      <workItem from="1639476161628" duration="22767000" />
+      <workItem from="1639523621122" duration="4075000" />
     </task>
+    <task id="LOCAL-00001" summary="add projects">
+      <created>1639497585400</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1639497585400</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -130,6 +145,10 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="add projects" />
+    <option name="LAST_COMMIT_MESSAGE" value="add projects" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
