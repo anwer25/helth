@@ -9,7 +9,8 @@ import TableView from '../table';
 const UseListData: React.FC = function ({collection}): JSX.Element {
 	const [loading, setLoading] = useState(true);
 	const [data, setData] = useState([]);
-	const tableHeader = ['Nom', 'UID', 'Email', 'Autorisations'];
+	const tableHeader: Array<string> = ['Email', 'Autorisations', 'Nom', 'UID'];
+	const widthArr: Array<number> = [180, 94, 100, 250];
 	useEffect(() => {
 		// TODO: fix side effect here
 		const sync = (async function getData() {
@@ -35,7 +36,11 @@ const UseListData: React.FC = function ({collection}): JSX.Element {
 	} else {
 		return (
 			<View style={styles.container}>
-				<TableView header={tableHeader} data={data} />
+				<TableView
+					header={tableHeader}
+					data={data}
+					widthArr={widthArr}
+				/>
 			</View>
 		);
 	}
