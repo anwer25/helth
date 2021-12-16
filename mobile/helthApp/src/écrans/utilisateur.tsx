@@ -63,19 +63,8 @@ const Utilisateur: React.FC = function ({navigation}) {
 							Ajouter
 						</Text>
 					</TouchableOpacity>
-					<TouchableOpacity style={[styles.navButton]}>
-						<Text style={[styles.dropDownTextOptions]}>
-							Modifier
-						</Text>
-					</TouchableOpacity>
-					<TouchableOpacity style={[styles.navButton]}>
-						<Text style={[styles.dropDownTextOptions]}>
-							Supprimer
-						</Text>
-					</TouchableOpacity>
 				</View>
 			) : null}
-			{/* TODO: add list here from fireBase dataBase */}
 			<View style={[styles.flexLg]}>
 				<Ajouter />
 				<UseListData collection="users" />
