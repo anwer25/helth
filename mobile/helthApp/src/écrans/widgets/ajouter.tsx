@@ -27,7 +27,7 @@ const Ajouter: React.FC = function (): JSX.Element {
 						<Text>Email: </Text>
 						<Text>Mot de pass: </Text>
 						<Text>Mot de pass: </Text>
-						uuuu<Text>Autorisation: </Text>
+						<Text>Autorisation: </Text>
 					</View>
 					<View style={[styles.container, styles.col]}>
 						<TextInput

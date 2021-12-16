@@ -10,6 +10,7 @@ const Utilisateur: React.FC = function ({navigation}) {
 	const [shouldShow, setShow] = useState(false);
 	const [shouldShowOptions, setShouldShowOptions] = useState(false);
 	const {logout, showW, setShowW} = useContext(authContext);
+	const tableHeader: Array<string> = ['Email', 'Autorisations', 'Nom', 'UID'];
 	useEffect(() => {}, []);
 	return (
 		<View style={[styles.container, styles.col]}>
@@ -67,7 +68,7 @@ const Utilisateur: React.FC = function ({navigation}) {
 			) : null}
 			<View style={[styles.flexLg]}>
 				<Ajouter />
-				<UseListData collection="users" />
+				<UseListData collection="users" tableHeader={tableHeader} />
 			</View>
 		</View>
 	);
