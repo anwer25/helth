@@ -1,6 +1,6 @@
 import React, {useContext, useEffect, useState} from 'react';
 import {Image, Text, TouchableOpacity, View} from 'react-native';
-import {authContext} from '../navigation/authProvider';
+import {authContext} from '../components/hooks/authProvider';
 import styles from '../ressources/styles';
 import {menu, utilisateurMenuLogo} from '../ressources/images';
 import UseListData from '../components/hooks/listView';

@@ -1,6 +1,6 @@
-import React, {useState, useContext} from 'react';
+import React, {useContext, useState} from 'react';
 import {Image, Text, TouchableOpacity, View} from 'react-native';
-import {authContext} from '../navigation/authProvider';
+import {authContext} from '../components/hooks/authProvider';
 import styles from '../ressources/styles';
 import {journaux, menu, salle, user, users} from '../ressources/images';
 

@@ -1,6 +1,6 @@
 import React from 'react';
 
-import {AuthProvider} from './authProvider';
+import {AuthProvider} from '../components/hooks/authProvider';
 import Routes from './Routes';
 
 const Providers: React.FC = function () {

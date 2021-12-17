@@ -1,7 +1,7 @@
-import React, {useState, useContext} from 'react';
-import {View, TextInput, Text, TouchableOpacity} from 'react-native';
+import React, {useContext, useState} from 'react';
+import {Text, TextInput, TouchableOpacity, View} from 'react-native';
 // @ts-ignore
-import {authContext} from '../navigation/authProvider.tsx';
+import {authContext} from '../components/hooks/authProvider.tsx';
 // eslint-disable-next-line import/extensions,import/no-unresolved
 import styles from '../ressources/styles';
 
