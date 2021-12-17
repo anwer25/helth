@@ -1,6 +1,6 @@
 import React, {useContext, useEffect, useState} from 'react';
 import {Image, Text, TouchableOpacity, View} from 'react-native';
-import {authContext} from '../navigation/authProvider';
+import {authContext} from '../components/hooks/authProvider';
 import styles from '../ressources/styles';
 import {menu, utilisateurMenuLogo} from '../ressources/images';
 import UseListData from '../components/hooks/listView';
@@ -10,6 +10,7 @@ const Utilisateur: React.FC = function ({navigation}) {
 	const [shouldShow, setShow] = useState(false);
 	const [shouldShowOptions, setShouldShowOptions] = useState(false);
 	const {logout, showW, setShowW} = useContext(authContext);
+	const tableHeader: Array<string> = ['Email', 'Autorisations', 'Nom', 'UID'];
 	useEffect(() => {}, []);
 	return (
 		<View style={[styles.container, styles.col]}>
@@ -67,7 +68,7 @@ const Utilisateur: React.FC = function ({navigation}) {
 			) : null}
 			<View style={[styles.flexLg]}>
 				<Ajouter />
-				<UseListData collection="users" />
+				<UseListData collection="users" tableHeader={tableHeader} />
 			</View>
 		</View>
 	);

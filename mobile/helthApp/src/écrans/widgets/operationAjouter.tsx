@@ -4,14 +4,12 @@ import SelectDropdown from 'react-native-select-dropdown';
 import {authContext} from '../../components/hooks/authProvider';
 import styles from '../../ressources/styles';
 
-const Ajouter: React.FC = function (): JSX.Element {
+const AjouterO: React.FC = function (): JSX.Element {
 	const [elémentSélectionné, définirSélectionné] = useState('');
 	const [nom, definirNom] = useState('');
-	const [email, definirEmail] = useState('');
-	const [mtp, definirMtp] = useState('');
-	const {showW, setShowW, register} = useContext(authContext);
+	const {showW, setShowW, ajouterOperation} = useContext(authContext);
 
-	const role = ['Protection', 'Réception'];
+	const etat = ['Réservé', 'Liber'];
 	return (
 		<Modal
 			animationType="slide"
@@ -23,28 +21,17 @@ const Ajouter: React.FC = function (): JSX.Element {
 				<View
 					style={[styles.container, styles.row, styles.alignCenter]}>
 					<View style={[styles.container, styles.col]}>
-						<Text>Nom: </Text>
-						<Text>Email: </Text>
-						<Text>Mot de pass: </Text>
-						<Text>Mot de pass: </Text>
-						<Text>Autorisation: </Text>
+						<Text>Nomber: </Text>
+						<Text>Etat: </Text>
 					</View>
 					<View style={[styles.container, styles.col]}>
 						<TextInput
-							placeholder="Nom"
+							placeholder="Nomber"
 							onChangeText={definirNom}
-						/>
-						<TextInput
-							placeholder="Email"
-							onChangeText={definirEmail}
-						/>
-						<TextInput
-							placeholder="Mot de pass"
-							onChangeText={definirMtp}
 						/>
 						{/* @ts-ignore */}
 						<SelectDropdown
-							data={role}
+							data={etat}
 							onSelect={elément => définirSélectionné(elément)}
 							buttonTextAfterSelection={elément => elément}
 						/>
@@ -62,9 +49,7 @@ const Ajouter: React.FC = function (): JSX.Element {
 					<Text>Fermer</Text>
 				</Pressable>
 				<Pressable
-					onPress={() =>
-						register(email, mtp, nom, elémentSélectionné)
-					}>
+					onPress={() => ajouterOperation(nom, elémentSélectionné)}>
 					<Text>Sauvegarder</Text>
 				</Pressable>
 			</View>
@@ -72,4 +57,4 @@ const Ajouter: React.FC = function (): JSX.Element {
 	);
 };
 
-export default Ajouter;
+export default AjouterO;

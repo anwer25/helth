@@ -6,10 +6,12 @@ import Chargement from '../chargement';
 import styles from '../../ressources/styles';
 import TableView from '../table';
 
-const UseListData: React.FC = function ({collection}): JSX.Element {
+const UseListData: React.FC = function ({
+	collection,
+	tableHeader,
+}): JSX.Element {
 	const [loading, setLoading] = useState(true);
 	const [data, setData] = useState([]);
-	const tableHeader: Array<string> = ['Email', 'Autorisations', 'Nom', 'UID'];
 	const widthArr: Array<number> = [180, 94, 100, 250];
 	useEffect(() => {
 		// TODO: fix side effect here

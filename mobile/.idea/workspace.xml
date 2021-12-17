@@ -9,12 +9,17 @@
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fc67ae1a-ad1f-4d3a-93a2-60720119402c" name="Changes" comment="add create user function">
+    <list default="true" id="fc67ae1a-ad1f-4d3a-93a2-60720119402c" name="Changes" comment="add patient func">
+      <change afterPath="$PROJECT_DIR$/helthApp/src/écrans/widgets/operationAjouter.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/helthApp/src/components/hooks/listView.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/helthApp/src/components/hooks/listView.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/helthApp/src/components/table.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/helthApp/src/components/table.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/helthApp/src/ressources/styles.ts" beforeDir="false" afterPath="$PROJECT_DIR$/helthApp/src/ressources/styles.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/helthApp/src/ressources/utils/types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/helthApp/src/ressources/utils/types.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/helthApp/src/navigation/Routes.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/helthApp/src/navigation/Routes.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/helthApp/src/navigation/authProvider.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/helthApp/src/components/hooks/authProvider.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/helthApp/src/navigation/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/helthApp/src/navigation/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/helthApp/src/écrans/Patient.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/helthApp/src/écrans/Patient.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/helthApp/src/écrans/admin.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/helthApp/src/écrans/admin.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/helthApp/src/écrans/connexion.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/helthApp/src/écrans/connexion.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/helthApp/src/écrans/journaux.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/helthApp/src/écrans/journaux.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/helthApp/src/écrans/opération.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/helthApp/src/écrans/opération.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/helthApp/src/écrans/utilisateur.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/helthApp/src/écrans/utilisateur.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/helthApp/src/écrans/widgets/ajouter.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/helthApp/src/écrans/widgets/ajouter.tsx" afterDir="false" />
     </list>
@@ -46,20 +51,23 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/helthApp/src/écrans/widgets/operationAjouter.tsx" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/helthApp/src/écrans/opération.tsx" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/helthApp/src/écrans/connexion.tsx" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/helthApp/src/écrans/Patient.tsx" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/helthApp/src/components/chargement.tsx" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/helthApp/src/components/hooks/listView.tsx" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/helthApp/src/navigation/index.tsx" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/helthApp/src/navigation/authProvider.tsx" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/helthApp/src/components/hooks/authProvider.tsx" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/helthApp/src/components/table.tsx" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/helthApp/src/navigation/adminStack.tsx" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/helthApp/src/navigation/Routes.tsx" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/helthApp/src/navigation/authStack.tsx" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/helthApp/src/ressources/utils/types.ts" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/helthApp/src/ressources/images.ts" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/helthApp/src/écrans/widgets/ajouter.tsx" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/helthApp/src/écrans/widgets/ajouter.tsx" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/helthApp/src/ressources/styles.ts" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/helthApp/src/écrans/utilisateur.tsx" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/helthApp/src/écrans/utilisateur.tsx" root0="SKIP_INSPECTION" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -97,6 +105,7 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/helthApp/src/components/hooks" />
       <recent name="$PROJECT_DIR$/helthApp/src/écrans/widgets" />
     </key>
   </component>
@@ -114,7 +123,8 @@
       <workItem from="1639523621122" duration="5918000" />
       <workItem from="1639564711814" duration="7492000" />
       <workItem from="1639573685555" duration="5722000" />
-      <workItem from="1639599724989" duration="1065000" />
+      <workItem from="1639599724989" duration="6641000" />
+      <workItem from="1639737156799" duration="5231000" />
     </task>
     <task id="LOCAL-00001" summary="add projects">
       <created>1639497585400</created>
@@ -130,7 +140,21 @@
       <option name="project" value="LOCAL" />
       <updated>1639528253802</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="fix table">
+      <created>1639604405635</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1639604405635</updated>
+    </task>
+    <task id="LOCAL-00004" summary="add patient func">
+      <created>1639655029214</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1639655029214</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -162,7 +186,9 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="add projects" />
     <MESSAGE value="add create user function" />
-    <option name="LAST_COMMIT_MESSAGE" value="add create user function" />
+    <MESSAGE value="fix table" />
+    <MESSAGE value="add patient func" />
+    <option name="LAST_COMMIT_MESSAGE" value="add patient func" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

@@ -58,6 +58,22 @@ const AuthProvider = function ({children}) {
 						console.error(e);
 					}
 				},
+				ajouterOperation: async (Nomber, etat) => {
+					try {
+						const db = firebase.firestore();
+						const dbQuery = await db
+							.collection('operation')
+							.add({N: Nomber, Etat: etat})
+							.then(() => {
+								console.log('ok');
+							})
+							.catch(e => {
+								console.error(e);
+							});
+					} catch (e) {
+						console.error(e);
+					}
+				},
 				logout: async () => {
 					try {
 						await auth().signOut();

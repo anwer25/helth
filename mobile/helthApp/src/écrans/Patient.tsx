@@ -1,13 +1,20 @@
-import React, {useState, useContext} from 'react';
-import {View, Text, TouchableOpacity, Image} from 'react-native';
-import {authContext} from '../navigation/authProvider';
+import React, {useContext, useState} from 'react';
+import {Image, Text, TouchableOpacity, View} from 'react-native';
+import {authContext} from '../components/hooks/authProvider';
 import styles from '../ressources/styles';
-import {patient, menu} from '../ressources/images';
+import {menu, patient} from '../ressources/images';
+import UseListData from '../components/hooks/listView';
 
 const Patient: React.FC = function () {
 	const [shouldShow, setShow] = useState(false);
 	const [shouldShowOptions, setShouldShowOptions] = useState(false);
 	const {logout} = useContext(authContext);
+	const tableHeader: Array<string> = [
+		'Nome',
+		'CIN',
+		'salle de operation',
+		'état',
+	];
 	return (
 		<View style={[styles.container, styles.col]}>
 			<View
@@ -19,14 +26,9 @@ const Patient: React.FC = function () {
 					styles.alignCenter,
 				]}>
 				<View>
-					<TouchableOpacity
-						style={[styles.footer]}
-						onPress={() => {
-							setShow(false);
-							setShouldShowOptions(!shouldShowOptions);
-						}}>
+					<View style={[styles.footer]}>
 						<Image source={patient} style={{marginLeft: -14}} />
-					</TouchableOpacity>
+					</View>
 				</View>
 				<View>
 					<TouchableOpacity
@@ -48,27 +50,10 @@ const Patient: React.FC = function () {
 					</TouchableOpacity>
 				</View>
 			) : null}
-			{shouldShowOptions ? (
-				<View>
-					<TouchableOpacity style={[styles.navButton]}>
-						<Text style={[styles.dropDownTextOptions]}>
-							Ajouter
-						</Text>
-					</TouchableOpacity>
-					<TouchableOpacity style={[styles.navButton]}>
-						<Text style={[styles.dropDownTextOptions]}>
-							Modifier
-						</Text>
-					</TouchableOpacity>
-					<TouchableOpacity style={[styles.navButton]}>
-						<Text style={[styles.dropDownTextOptions]}>
-							Supprimer
-						</Text>
-					</TouchableOpacity>
-				</View>
-			) : null}
 			{/* TODO: add list here from fireBase dataBase */}
-			<View style={[styles.flexLg]} />
+			<View style={[styles.flexLg]}>
+				<UseListData collection="patient" tableHeader={tableHeader} />
+			</View>
 		</View>
 	);
 };
