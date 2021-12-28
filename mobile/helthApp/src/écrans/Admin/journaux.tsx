@@ -1,16 +1,14 @@
-/* eslint-disable react-native/no-inline-styles */
 import React, {useContext, useState} from 'react';
 import {Image, Text, TouchableOpacity, View} from 'react-native';
-import {authContext} from '../components/hooks/authProvider';
-import styles from '../ressources/styles';
-import {menu, opération} from '../ressources/images';
-import UseListData from '../components/hooks/listView';
+import {authContext} from '../../components/hooks/authProvider';
+import styles from '../../ressources/styles';
+import {_journaux, menu} from '../../ressources/images';
 
-const Opération: React.FC = function () {
+const Journaux: React.FC = function () {
 	const [shouldShow, setShow] = useState(false);
 	const [shouldShowOptions, setShouldShowOptions] = useState(false);
+	// @ts-ignore
 	const {logout} = useContext(authContext);
-	const tableHeader: Array<string> = ['N', 'Etat'];
 	return (
 		<View style={[styles.container, styles.col]}>
 			<View
@@ -28,7 +26,7 @@ const Opération: React.FC = function () {
 							setShow(false);
 							setShouldShowOptions(!shouldShowOptions);
 						}}>
-						<Image source={opération} style={{marginLeft: -14}} />
+						<Image source={_journaux} style={{marginLeft: -14}} />
 					</TouchableOpacity>
 				</View>
 				<View>
@@ -55,27 +53,15 @@ const Opération: React.FC = function () {
 				<View>
 					<TouchableOpacity style={[styles.navButton]}>
 						<Text style={[styles.dropDownTextOptions]}>
-							Ajouter
-						</Text>
-					</TouchableOpacity>
-					{/* <TouchableOpacity style={[styles.navButton]}>
-						<Text style={[styles.dropDownTextOptions]}>
-							Modifier
-						</Text>
-					</TouchableOpacity>
-					<TouchableOpacity style={[styles.navButton]}>
-						<Text style={[styles.dropDownTextOptions]}>
 							Supprimer
 						</Text>
-					</TouchableOpacity> */}
+					</TouchableOpacity>
 				</View>
 			) : null}
 			{/* TODO: add list here from fireBase dataBase */}
-			<View style={[styles.flexLg]}>
-				<UseListData collection="operation" tableHeader={tableHeader} />
-			</View>
+			<View style={[styles.flexLg]} />
 		</View>
 	);
 };
 
-export default Opération;
+export default Journaux;

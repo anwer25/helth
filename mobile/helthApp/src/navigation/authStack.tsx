@@ -1,6 +1,6 @@
 import React from 'react';
 import {createStackNavigator} from '@react-navigation/stack';
-import Connexion from '../écrans/connexion';
+import Connexion from '../écrans/widgets/connexion';
 
 const Stack = createStackNavigator();
 // TODO: fix background

@@ -1,11 +1,13 @@
 import React, {useContext, useState} from 'react';
 import {Image, Text, TouchableOpacity, View} from 'react-native';
-import {authContext} from '../components/hooks/authProvider';
-import styles from '../ressources/styles';
-import {journaux, menu, salle, user, users} from '../ressources/images';
+import {authContext} from '../../components/hooks/authProvider';
+import styles from '../../ressources/styles';
+import {journaux, menu, salle, user, users} from '../../ressources/images';
 
+// @ts-ignore
 const Admin: React.FC = function ({navigation}) {
 	const [shouldShow, setShow] = useState(false);
+	// @ts-ignore
 	const {logout} = useContext(authContext);
 	return (
 		<View style={[styles.container, styles.col]}>

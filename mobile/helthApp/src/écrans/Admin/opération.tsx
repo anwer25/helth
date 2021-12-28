@@ -1,17 +1,18 @@
-import React, {useContext, useEffect, useState} from 'react';
+/* eslint-disable react-native/no-inline-styles */
+import React, {useContext, useState} from 'react';
 import {Image, Text, TouchableOpacity, View} from 'react-native';
-import {authContext} from '../components/hooks/authProvider';
-import styles from '../ressources/styles';
-import {menu, utilisateurMenuLogo} from '../ressources/images';
-import UseListData from '../components/hooks/listView';
-import Ajouter from './widgets/ajouter';
+import {authContext} from '../../components/hooks/authProvider';
+import styles from '../../ressources/styles';
+import {menu, opération} from '../../ressources/images';
+import UseListData from '../../components/hooks/listView';
 
-const Utilisateur: React.FC = function ({navigation}) {
+const Opération: React.FC = function () {
 	const [shouldShow, setShow] = useState(false);
 	const [shouldShowOptions, setShouldShowOptions] = useState(false);
-	const {logout, showW, setShowW} = useContext(authContext);
-	const tableHeader: Array<string> = ['Email', 'Autorisations', 'Nom', 'UID'];
-	useEffect(() => {}, []);
+	// @ts-ignore
+	const {logout} = useContext(authContext);
+	const tableHeader: Array<string> = ['N', 'Etat'];
+
 	return (
 		<View style={[styles.container, styles.col]}>
 			<View
@@ -29,10 +30,7 @@ const Utilisateur: React.FC = function ({navigation}) {
 							setShow(false);
 							setShouldShowOptions(!shouldShowOptions);
 						}}>
-						<Image
-							source={utilisateurMenuLogo}
-							style={{marginLeft: -14}}
-						/>
+						<Image source={opération} style={{marginLeft: -14}} />
 					</TouchableOpacity>
 				</View>
 				<View>
@@ -57,21 +55,30 @@ const Utilisateur: React.FC = function ({navigation}) {
 			) : null}
 			{shouldShowOptions ? (
 				<View>
-					<TouchableOpacity
-						style={[styles.navButton]}
-						onPress={() => setShowW(true)}>
+					<TouchableOpacity style={[styles.navButton]}>
 						<Text style={[styles.dropDownTextOptions]}>
 							Ajouter
 						</Text>
 					</TouchableOpacity>
+					{/* <TouchableOpacity style={[styles.navButton]}>
+						<Text style={[styles.dropDownTextOptions]}>
+							Modifier
+						</Text>
+					</TouchableOpacity>
+					<TouchableOpacity style={[styles.navButton]}>
+						<Text style={[styles.dropDownTextOptions]}>
+							Supprimer
+						</Text>
+					</TouchableOpacity> */}
 				</View>
 			) : null}
+			{/* TODO: add list here from fireBase dataBase */}
 			<View style={[styles.flexLg]}>
-				<Ajouter />
-				<UseListData collection="users" tableHeader={tableHeader} />
+				{/* @ts-ignore */}
+				<UseListData collection="operation" tableHeader={tableHeader} />
 			</View>
 		</View>
 	);
 };
 
-export default Utilisateur;
+export default Opération;

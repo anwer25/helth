@@ -1,10 +1,10 @@
 import React from 'react';
 import {createStackNavigator} from '@react-navigation/stack';
-import Admin from '../écrans/admin';
-import Utilisateur from '../écrans/utilisateur';
-import Opération from '../écrans/opération';
-import Patient from '../écrans/Patient';
-import Journaux from '../écrans/journaux';
+import Admin from '../écrans/Admin/admin';
+import Utilisateur from '../écrans/Admin/utilisateur';
+import Opération from '../écrans/Admin/opération';
+import Patient from '../écrans/Admin/Patient';
+import Journaux from '../écrans/Admin/journaux';
 
 const Stack = createStackNavigator();
 
