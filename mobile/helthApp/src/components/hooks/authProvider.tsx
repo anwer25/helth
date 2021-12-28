@@ -1,4 +1,5 @@
 import React, {createContext, useState} from 'react';
+import {Alert} from 'react-native';
 import auth from '@react-native-firebase/auth';
 import {firebase} from '@react-native-firebase/firestore';
 
@@ -29,7 +30,7 @@ const AuthProvider = function ({children}) {
 								password,
 							);
 						} catch (e) {
-							console.error(e);
+							Alert.alert(e, e);
 						}
 					}
 				},
@@ -44,7 +45,8 @@ const AuthProvider = function ({children}) {
 						const db = firebase.firestore();
 						const dbQuery = await db
 							.collection('users')
-							.add({
+							.doc(auth().currentUser?.uid)
+							.set({
 								Name: nom,
 								UID: auth().currentUser?.uid,
 								email,
