@@ -1,13 +1,21 @@
-import React, {useContext, useState} from 'react';
+import React, {useContext, useEffect, useState} from 'react';
 import {Image, Text, TouchableOpacity, View} from 'react-native';
-import {authContext} from '../components/hooks/authProvider';
-import styles from '../ressources/styles';
-import {_journaux, menu} from '../ressources/images';
+import {authContext} from '../../components/hooks/authProvider';
+import styles from '../../ressources/styles';
+import {menu, utilisateurMenuLogo} from '../../ressources/images';
+import UseListData from '../../components/hooks/listView';
+import Ajouter from '../widgets/ajouter';
 
-const Journaux: React.FC = function () {
+// @ts-ignore
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+const Utilisateur: React.FC = function ({navigation}) {
 	const [shouldShow, setShow] = useState(false);
 	const [shouldShowOptions, setShouldShowOptions] = useState(false);
-	const {logout} = useContext(authContext);
+	// @ts-ignore
+	// eslint-disable-next-line @typescript-eslint/no-unused-vars
+	const {logout, showW, setShowW} = useContext(authContext);
+	const tableHeader: Array<string> = ['Email', 'Autorisations', 'Nom', 'UID'];
+	useEffect(() => {}, []);
 	return (
 		<View style={[styles.container, styles.col]}>
 			<View
@@ -25,7 +33,10 @@ const Journaux: React.FC = function () {
 							setShow(false);
 							setShouldShowOptions(!shouldShowOptions);
 						}}>
-						<Image source={_journaux} style={{marginLeft: -14}} />
+						<Image
+							source={utilisateurMenuLogo}
+							style={{marginLeft: -14}}
+						/>
 					</TouchableOpacity>
 				</View>
 				<View>
@@ -50,17 +61,22 @@ const Journaux: React.FC = function () {
 			) : null}
 			{shouldShowOptions ? (
 				<View>
-					<TouchableOpacity style={[styles.navButton]}>
+					<TouchableOpacity
+						style={[styles.navButton]}
+						onPress={() => setShowW(true)}>
 						<Text style={[styles.dropDownTextOptions]}>
-							Supprimer
+							Ajouter
 						</Text>
 					</TouchableOpacity>
 				</View>
 			) : null}
-			{/* TODO: add list here from fireBase dataBase */}
-			<View style={[styles.flexLg]} />
+			<View style={[styles.flexLg]}>
+				<Ajouter />
+				{/* @ts-ignore */}
+				<UseListData collection="users" tableHeader={tableHeader} />
+			</View>
 		</View>
 	);
 };
 
-export default Journaux;
+export default Utilisateur;

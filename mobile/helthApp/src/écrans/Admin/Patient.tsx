@@ -1,13 +1,15 @@
 import React, {useContext, useState} from 'react';
 import {Image, Text, TouchableOpacity, View} from 'react-native';
-import {authContext} from '../components/hooks/authProvider';
-import styles from '../ressources/styles';
-import {menu, patient} from '../ressources/images';
-import UseListData from '../components/hooks/listView';
+import {authContext} from '../../components/hooks/authProvider';
+import styles from '../../ressources/styles';
+import {menu, patient} from '../../ressources/images';
+import UseListData from '../../components/hooks/listView';
 
 const Patient: React.FC = function () {
 	const [shouldShow, setShow] = useState(false);
+	// eslint-disable-next-line @typescript-eslint/no-unused-vars
 	const [shouldShowOptions, setShouldShowOptions] = useState(false);
+	// @ts-ignore
 	const {logout} = useContext(authContext);
 	const tableHeader: Array<string> = [
 		'Nome',
@@ -52,6 +54,7 @@ const Patient: React.FC = function () {
 			) : null}
 			{/* TODO: add list here from fireBase dataBase */}
 			<View style={[styles.flexLg]}>
+				{/* @ts-ignore */}
 				<UseListData collection="patient" tableHeader={tableHeader} />
 			</View>
 		</View>

@@ -1,9 +1,9 @@
 import React, {useContext, useState} from 'react';
 import {Text, TextInput, TouchableOpacity, View} from 'react-native';
 // @ts-ignore
-import {authContext} from '../components/hooks/authProvider.tsx';
+import {authContext} from '../../components/hooks/authProvider.tsx';
 // eslint-disable-next-line import/extensions,import/no-unresolved
-import styles from '../ressources/styles';
+import styles from '../../ressources/styles';
 
 // TODO: add fire base athu
 
