@@ -63,8 +63,23 @@ const Protection: React.FC = function (): JSX.Element {
 			{/* TODO: add element here */}
 			<View style={styles.flexLg}>
 				<ScrollView>
-					<View>
-						<Text>Hello</Text>
+					<View
+						style={[
+							styles.container,
+							styles.row,
+							styles.justifySpaceBet,
+						]}>
+						<View style={styles.col}>
+							<Text>Le patient est-li réveillé :</Text>
+							<Text>Nom :</Text>
+							<Text>Prénom :</Text>
+							<Text>CIN :</Text>
+							<Text>Gender :</Text>
+							<Text>Type de sang :</Text>
+							<Text>Donneur :</Text>
+							<Text>Type d'accident :</Text>
+							<Text>Type de blessure :</Text>
+						</View>
 					</View>
 				</ScrollView>
 			</View>
