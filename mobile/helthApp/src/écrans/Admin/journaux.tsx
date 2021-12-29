@@ -4,7 +4,7 @@ import {authContext} from '../../components/hooks/authProvider';
 import styles from '../../ressources/styles';
 import {_journaux, menu} from '../../ressources/images';
 
-const Journaux: React.FC = function () {
+const Journaux: React.FC = function (): JSX.Element {
 	const [shouldShow, setShow] = useState(false);
 	const [shouldShowOptions, setShouldShowOptions] = useState(false);
 	// @ts-ignore

@@ -7,6 +7,8 @@ import AuthStack from './authStack';
 import {authContext} from '../components/hooks/authProvider';
 import Chargement from '../components/chargement';
 import AdminStack from './adminStack';
+import Protection from '../écrans/Protection/protection';
+import Réception from '../écrans/Réception/réception';
 
 const Routes = function () {
 	// @ts-ignore
@@ -72,14 +74,14 @@ const Routes = function () {
 			// TODO: add 'Réception' Stack
 			return (
 				<NavigationContainer>
-					<AdminStack />
+					<Réception />
 				</NavigationContainer>
 			);
 		} else {
 			// TODO: add Protection Stack
 			return (
 				<NavigationContainer>
-					<AdminStack />
+					<Protection />
 				</NavigationContainer>
 			);
 		}

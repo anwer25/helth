@@ -6,7 +6,7 @@ import styles from '../../ressources/styles';
 import {menu, opération} from '../../ressources/images';
 import UseListData from '../../components/hooks/listView';
 
-const Opération: React.FC = function () {
+const Opération: React.FC = function (): JSX.Element {
 	const [shouldShow, setShow] = useState(false);
 	const [shouldShowOptions, setShouldShowOptions] = useState(false);
 	// @ts-ignore
