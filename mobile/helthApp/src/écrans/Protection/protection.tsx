@@ -1,18 +1,10 @@
-import React, {useState, useEffect, useContext} from 'react';
-import {
-	View,
-	ScrollView,
-	Text,
-	TextInput,
-	Pressable,
-	TouchableOpacity,
-	Image,
-} from 'react-native';
-import SelectDropdown from 'react-native-select-dropdown';
+import React, {useState, useContext} from 'react';
+import {View, Text, TouchableOpacity, Image} from 'react-native';
 import {firebase} from '@react-native-firebase/firestore';
 import {authContext} from '../../components/hooks/authProvider';
 import styles from '../../ressources/styles';
 import {opération, menu} from '../../ressources/images';
+import Données from '../../components/données';
 
 const Protection: React.FC = function (): JSX.Element {
 	const [shouldShow, setShow] = useState(false);
@@ -62,26 +54,7 @@ const Protection: React.FC = function (): JSX.Element {
 			) : null}
 			{/* TODO: add element here */}
 			<View style={styles.flexLg}>
-				<ScrollView>
-					<View
-						style={[
-							styles.container,
-							styles.row,
-							styles.justifySpaceBet,
-						]}>
-						<View style={styles.col}>
-							<Text>Le patient est-li réveillé :</Text>
-							<Text>Nom :</Text>
-							<Text>Prénom :</Text>
-							<Text>CIN :</Text>
-							<Text>Gender :</Text>
-							<Text>Type de sang :</Text>
-							<Text>Donneur :</Text>
-							<Text>Type d'accident :</Text>
-							<Text>Type de blessure :</Text>
-						</View>
-					</View>
-				</ScrollView>
+				<Données />
 			</View>
 		</View>
 	);
