@@ -1,18 +1,10 @@
 import React, {useState} from 'react';
 import {ScrollView, TextInput, View} from 'react-native';
-import SelectDropdown from 'react-native-select-dropdown';
-import SelectBox from 'react-native-multi-selectbox';
+// @ts-ignore
 import {xorBy} from 'lodash';
-import Étiqueter from './étiqueter';
 import styles from '../ressources/styles';
-import {
-	sexeNom,
-	typeDeSang,
-	_donneur,
-	_réveillé,
-	typeAccident,
-	TypeDeBlessure,
-} from '../ressources/utils/_varibales';
+
+import Case from './case';
 
 const Données: React.FC = function (): JSX.Element {
 	const [nom, Nom] = useState('');
@@ -25,59 +17,41 @@ const Données: React.FC = function (): JSX.Element {
 	const [accident, Accident] = useState('');
 	const [blessure, Blessure] = useState([]);
 	function multiChange() {
+		// @ts-ignore
 		return (item: any) => Blessure(xorBy(blessure, [item], 'id'));
 	}
 	return (
-		<View style={[styles.container, styles.row, styles.justifySpaceBet]}>
-			<Étiqueter />
+		<View style={[styles.container, styles.row]}>
 			<View style={[styles.col]}>
-				<TextInput value={nom} onChangeText={Nom} placeholder="text" />
+				<TextInput value={nom} onChangeText={Nom} placeholder="Nom :" />
 				<TextInput
 					value={prénom}
 					onChangeText={Prénom}
-					placeholder="pre"
+					placeholder="Prénom :"
 				/>
-				<TextInput value={cin} onChangeText={CIN} placeholder="cin" />
-				<SelectDropdown
-					data={sexeNom}
-					onSelect={element => Sexe(element)}
-					defaultButtonText={sexeNom[0]}
-					buttonTextAfterSelection={element => element}
+				<TextInput value={cin} onChangeText={CIN} placeholder="CIN" />
+
+				<Case
+					value={sexe}
+					onChange={(val: React.SetStateAction<string>) => Sexe(val)}
+					value1={donneur}
+					onChange1={(val: React.SetStateAction<string>) =>
+						Donneur(val)
+					}
+					value2={sang}
+					onChange2={(val: React.SetStateAction<string>) => Sang(val)}
+					value3={accident}
+					onChange3={(val: React.SetStateAction<string>) =>
+						Accident(val)
+					}
+					selectedValues={blessure}
+					onMultiSelect={multiChange()}
+					value4={réveillée}
+					onChange4={(val: React.SetStateAction<string>) =>
+						Réveillée(val)
+					}
 				/>
-				<SelectDropdown
-					data={typeDeSang}
-					onSelect={element => Sang(element)}
-					defaultButtonText={typeDeSang[0]}
-					buttonTextAfterSelection={element => element}
-				/>
-				<SelectDropdown
-					data={_donneur}
-					onSelect={element => Donneur(element)}
-					defaultButtonText={_donneur[0]}
-					buttonTextAfterSelection={element => element}
-				/>
-				<SelectDropdown
-					data={_réveillé}
-					onSelect={element => Réveillée(element)}
-					defaultButtonText={_réveillé[0]}
-					buttonTextAfterSelection={element => element}
-				/>
-				<SelectDropdown
-					data={typeAccident}
-					onSelect={element => Accident(element)}
-					defaultButtonText={typeAccident[0]}
-					buttonTextAfterSelection={element => element}
-				/>
-				<View>
-					<SelectBox
-						label="Type de blessure :"
-						options={TypeDeBlessure}
-						selectedValues={blessure}
-						onMultiSelect={multiChange()}
-						onTapClose={multiChange()}
-						isMulti
-					/>
-				</View>
+				{console.log(sexe)}
 			</View>
 		</View>
 	);

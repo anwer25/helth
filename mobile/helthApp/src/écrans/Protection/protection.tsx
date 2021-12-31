@@ -1,6 +1,5 @@
 import React, {useState, useContext} from 'react';
 import {View, Text, TouchableOpacity, Image} from 'react-native';
-import {firebase} from '@react-native-firebase/firestore';
 import {authContext} from '../../components/hooks/authProvider';
 import styles from '../../ressources/styles';
 import {opération, menu} from '../../ressources/images';

@@ -1,24 +1,30 @@
-const sexeNom: Array<string> = ['homme', 'femme'];
-const typeDeSang: Array<string> = [
-	'O-',
-	'O+',
-	'B+',
-	'A-',
-	'A+',
-	'AB-',
-	'AB+',
-	'Autre',
+const sexeNom: Array<Object> = [
+	{item: 'homme', id: 'HO'},
+	{item: 'femme', id: 'FE'},
 ];
-const _donneur: Array<string> = ['Non', 'Oui'];
-const _réveillé: Array<string> = ['Non', 'Oui'];
-const typeAccident: Array<string> = [
-	'accidents de la route',
-	'accidents domestiques',
-	'accidents du travail',
-	'Autre',
+const typeDeSang: Array<Object> = [
+	{item: 'O-', id: 'O-'},
+	{item: 'O+', id: 'O+'},
+	{item: 'B+', id: 'B+'},
+	{item: 'A-', id: 'A-'},
+	{item: 'A+', id: 'A+'},
+	{item: 'AB-', id: 'AB-'},
+	{item: 'AB+', id: 'AB+'},
+	{item: 'Autre', id: 'AU'},
+];
+const ouiOuNon: Array<Object> = [
+	{item: 'Non', id: 'Non'},
+	{item: 'Oui', id: 'Oui'},
 ];
 
-const TypeDeBlessure = [
+const typeAccident: Array<Object> = [
+	{item: 'accidents de la route', id: 'RO'},
+	{item: 'accidents domestiques', id: 'DO'},
+	{item: 'accidents du travail', id: 'TR'},
+	{item: 'Autre', id: 'AU'},
+];
+
+const TypeDeBlessure: Array<Object> = [
 	{item: 'Entorse', id: 'En'},
 	{item: 'Fracture', id: 'Fr'},
 	{
@@ -55,4 +61,4 @@ const TypeDeBlessure = [
 	},
 ];
 
-export {sexeNom, typeDeSang, _donneur, _réveillé, typeAccident, TypeDeBlessure};
+export {sexeNom, typeDeSang, ouiOuNon, typeAccident, TypeDeBlessure};
