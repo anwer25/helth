@@ -13,7 +13,6 @@ const Étiqueter: React.FC = function (): JSX.Element {
 			<Text>Donneur :</Text>
 			<Text>Le patient est-li réveillé :</Text>
 			<Text>Type d'accident :</Text>
-			<Text>Type de blessure :</Text>
 			{/* TODO ADD CHECK HERE */}
 		</View>
 	);
