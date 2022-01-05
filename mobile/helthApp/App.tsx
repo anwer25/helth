@@ -4,7 +4,7 @@ import styles from './src/ressources/styles';
 import {backgroundImage, logo_h, logo_b} from './src/ressources/images';
 import Providers from './src/navigation';
 
-const App = function () {
+const App: React.FC = function (): JSX.Element {
 	return (
 		<View style={styles.container}>
 			<ImageBackground

@@ -51,7 +51,6 @@ const Données: React.FC = function (): JSX.Element {
 						Réveillée(val)
 					}
 				/>
-				{console.log(sexe)}
 			</View>
 		</View>
 	);
