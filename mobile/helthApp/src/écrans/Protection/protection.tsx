@@ -4,12 +4,13 @@ import {authContext} from '../../components/hooks/authProvider';
 import styles from '../../ressources/styles';
 import {opération, menu} from '../../ressources/images';
 import Données from '../../components/données';
+import Chargement from '../../components/chargement';
 
 const Protection: React.FC = function (): JSX.Element {
 	const [shouldShow, setShow] = useState(false);
 	const [shouldShowOptions, setShouldShowOptions] = useState(false);
 	// @ts-ignore
-	const {logout} = useContext(authContext);
+	const {logout, loading} = useContext(authContext);
 	return (
 		<View style={[styles.container, styles.col]}>
 			<View
@@ -53,7 +54,7 @@ const Protection: React.FC = function (): JSX.Element {
 			) : null}
 			{/* TODO: add element here */}
 			<View style={styles.flexLg}>
-				<Données />
+				{loading ? <Chargement /> : <Données />}
 			</View>
 		</View>
 	);

@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "npx twilio-run --inspect",
     "predeploy": "tsc",
-    "deploy": "npx twilio-run deploy"
+    "deploy": "twilio serverless:deploy"
   },
   "dependencies": {
     "@twilio-labs/serverless-runtime-types": "^2.2.1",
@@ -27,6 +27,7 @@
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-import": "^2.25.4",
     "eslint-plugin-prettier": "^4.0.0",
+    "parcel": "^2.1.0",
     "prettier": "^2.5.1",
     "twilio-run": "^1.1.2",
     "typescript": "^4.5.4"

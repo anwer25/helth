@@ -1,14 +1,15 @@
 import React, {useState} from 'react';
-import {ScrollView, TextInput, View} from 'react-native';
-// @ts-ignore
+import {TextInput, View} from 'react-native';
 import {xorBy} from 'lodash';
+import Button from './sendButton';
+// @ts-ignore
 import styles from '../ressources/styles';
 
 import Case from './case';
 
 const Données: React.FC = function (): JSX.Element {
 	const [nom, Nom] = useState('');
-	const [prénom, Prénom] = useState('');
+	const [prenom, Prenom] = useState('');
 	const [cin, CIN] = useState('');
 	const [sexe, Sexe] = useState('');
 	const [sang, Sang] = useState('');
@@ -23,11 +24,11 @@ const Données: React.FC = function (): JSX.Element {
 	return (
 		<View style={[styles.container, styles.row]}>
 			<View style={[styles.col]}>
-				<TextInput value={nom} onChangeText={Nom} placeholder="Nom :" />
+				<TextInput value={nom} onChangeText={Nom} placeholder="Nom" />
 				<TextInput
-					value={prénom}
-					onChangeText={Prénom}
-					placeholder="Prénom :"
+					value={prenom}
+					onChangeText={Prenom}
+					placeholder="Prénom"
 				/>
 				<TextInput value={cin} onChangeText={CIN} placeholder="CIN" />
 
@@ -46,11 +47,19 @@ const Données: React.FC = function (): JSX.Element {
 					}
 					selectedValues={blessure}
 					onMultiSelect={multiChange()}
-					value4={réveillée}
-					onChange4={(val: React.SetStateAction<string>) =>
-						Réveillée(val)
-					}
 				/>
+				<View>
+					<Button
+						nom={nom}
+						prenom={prenom}
+						cin={cin}
+						sexe={sexe}
+						sang={sang}
+						donneur={donneur}
+						accident={accident}
+						blessure={blessure}
+					/>
+				</View>
 			</View>
 		</View>
 	);

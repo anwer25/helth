@@ -9,11 +9,14 @@ export const authContext = createContext({});
 const AuthProvider = function ({children}) {
 	const [user, setUser] = useState(null);
 	const [showW, setShowW] = useState(false);
+	const [loading, setLoading] = useState(false);
 	return (
 		<authContext.Provider
 			value={{
 				user,
 				showW,
+				loading,
+				setLoading,
 				setUser,
 				setShowW,
 				login: async (email: string, password: string) => {
@@ -38,6 +41,7 @@ const AuthProvider = function ({children}) {
 					email: string,
 					mtp: string,
 					nom: string,
+					tel: string,
 					role: string,
 				) => {
 					try {
@@ -50,6 +54,7 @@ const AuthProvider = function ({children}) {
 								Name: nom,
 								UID: auth().currentUser?.uid,
 								email,
+								tel,
 								ruels: role,
 							})
 							.then(() => console.log('ok'))
@@ -60,7 +65,49 @@ const AuthProvider = function ({children}) {
 						console.error(e);
 					}
 				},
-				ajouterOperation: async (Nomber, etat) => {
+				registerOp: async (nom: string, tel: string, role: string) => {
+					try {
+						const db = firebase.firestore();
+						const dbQuery = await db
+							.collection('users')
+							.doc()
+							.set({
+								Name: nom,
+								tel,
+								ruels: role,
+							})
+							.then(async () => {
+								// eslint-disable-next-line no-return-await
+								try {
+									await fetch('', {
+										method: 'POST',
+										body: JSON.stringify({nom, tel}),
+										headers: {
+											'Content-type':
+												'application/json;charset=UTF-8',
+										},
+									})
+										.then(responce => {
+											console.log(responce.json());
+										})
+										.then(json => {
+											console.log(json);
+										})
+										.catch(err => {
+											console.log(err);
+										});
+								} catch (e) {
+									console.log(e);
+								}
+							})
+							.catch(e => {
+								console.error(e);
+							});
+					} catch (e) {
+						console.error(e);
+					}
+				},
+				ajouterOperation: async (Nomber: string, etat: string) => {
 					try {
 						const db = firebase.firestore();
 						const dbQuery = await db

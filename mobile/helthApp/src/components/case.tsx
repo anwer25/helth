@@ -14,12 +14,10 @@ const Case = function (props: CaseProp) {
 	const {
 		onChange,
 		value,
-		value4,
 		value3,
 		value2,
 		value1,
 		onMultiSelect,
-		onChange4,
 		selectedValues,
 		onChange3,
 		onChange2,
@@ -67,13 +65,6 @@ const Case = function (props: CaseProp) {
 				onTapClose={onMultiSelect}
 				inputPlaceholder="Sélectionner "
 				isMulti
-			/>
-			<SelectBox
-				label="Le patient est-li réveillé :"
-				options={ouiOuNon}
-				value={value4}
-				onChange={onChange4}
-				inputPlaceholder="Sélectionner "
 			/>
 		</View>
 	);

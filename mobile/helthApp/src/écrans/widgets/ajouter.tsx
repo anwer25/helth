@@ -9,7 +9,8 @@ const Ajouter: React.FC = function (): JSX.Element {
 	const [nom, definirNom] = useState('');
 	const [email, definirEmail] = useState('');
 	const [mtp, definirMtp] = useState('');
-	const {showW, setShowW, register} = useContext(authContext);
+	const [tel, definiTel] = useState('');
+	const {showW, setShowW, register, registerOp} = useContext(authContext);
 
 	const role = ['Protection', 'Réception'];
 	return (
@@ -23,31 +24,46 @@ const Ajouter: React.FC = function (): JSX.Element {
 				<View
 					style={[styles.container, styles.row, styles.alignCenter]}>
 					<View style={[styles.container, styles.col]}>
-						<Text>Nom: </Text>
-						<Text>Email: </Text>
-						<Text>Mot de pass: </Text>
-						<Text>Mot de pass: </Text>
 						<Text>Autorisation: </Text>
+						<Text>Nom: </Text>
+						{elémentSélectionné === role[0] ? (
+							<>
+								<Text>Email: </Text>
+								<Text>Mot de pass: </Text>
+								<Text>Mot de pass: </Text>
+							</>
+						) : (
+							<Text>Tel :</Text>
+						)}
 					</View>
 					<View style={[styles.container, styles.col]}>
-						<TextInput
-							placeholder="Nom"
-							onChangeText={definirNom}
-						/>
-						<TextInput
-							placeholder="Email"
-							onChangeText={definirEmail}
-						/>
-						<TextInput
-							placeholder="Mot de pass"
-							onChangeText={definirMtp}
-						/>
 						{/* @ts-ignore */}
 						<SelectDropdown
 							data={role}
 							onSelect={elément => définirSélectionné(elément)}
 							buttonTextAfterSelection={elément => elément}
 						/>
+						<TextInput
+							placeholder="Nom"
+							onChangeText={definirNom}
+						/>
+						{elémentSélectionné === role[0] ? (
+							<>
+								<TextInput
+									placeholder="Email"
+									onChangeText={definirEmail}
+								/>
+								<TextInput
+									placeholder="Mot de pass"
+									onChangeText={definirMtp}
+								/>
+							</>
+						) : (
+							<TextInput
+								placeholder="Tel"
+								onChangeText={definiTel}
+							/>
+						)}
 					</View>
 				</View>
 			</View>
@@ -63,7 +79,9 @@ const Ajouter: React.FC = function (): JSX.Element {
 				</Pressable>
 				<Pressable
 					onPress={() =>
-						register(email, mtp, nom, elémentSélectionné)
+						elémentSélectionné === role[0]
+							? register(email, mtp, nom, elémentSélectionné, tel)
+							: registerOp(nom, tel, elémentSélectionné)
 					}>
 					<Text>Sauvegarder</Text>
 				</Pressable>
