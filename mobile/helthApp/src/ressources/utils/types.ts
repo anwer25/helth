@@ -6,6 +6,20 @@ export interface table {
 	widthArr: Array<any>;
 }
 
+export interface API {
+	data: {
+		nom: string;
+		prenome: string;
+		cin: string;
+		sexe: string;
+		sang: string;
+		donneur: string;
+		reveillee: string;
+		accident: string;
+		blessure: string;
+	};
+}
+
 export interface CaseProp {
 	value: string;
 	onChange: (val: React.SetStateAction<string>) => void;
@@ -17,6 +31,4 @@ export interface CaseProp {
 	onChange3: (val: React.SetStateAction<string>) => void;
 	selectedValues: string[];
 	onMultiSelect: (item: string) => void;
-	value4: string;
-	onChange4: (val: React.SetStateAction<string>) => void;
 }

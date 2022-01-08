@@ -21,16 +21,18 @@ class MessageServer {
 			})
 			// eslint-disable-next-line camelcase
 			.then((validation_request: any) => validation_request)
-			.catch((e: any) => `error in add number : ${e}`);
+			.catch((e: any) => `error at add number : ${e}`);
 		return result;
 	}
 
-	public async messageSender(data: object) {
+	public async messageSender(data: object, number: string) {
+		const body = JSON.stringify(data);
+		const x = body.replace('{', ' ').replace('}', ' ').replace('"', ' ');
 		const result = await this.client.messages
 			.create({
 				from: '+14433907181',
-				body: JSON.stringify(data),
-				to: '+21654404493',
+				body: x,
+				to: `+216${number}`,
 			})
 			.then((_result: any) => _result)
 			.catch((e: any) => `error from message Sender ${e}`);

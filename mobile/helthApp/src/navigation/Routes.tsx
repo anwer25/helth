@@ -17,7 +17,7 @@ const Routes = function () {
 	const [initializing, setInitializing] = useState<boolean>(true);
 	const [data, setData] = useState('');
 	const db = firebase.firestore();
-	const ruels: Array<string> = ['Admin', 'Réception'];
+	const ruels: Array<string> = ['Admin', 'Protection'];
 
 	// eslint-disable-next-line no-shadow
 	function onAuthStateChanged(user: any) {
@@ -74,16 +74,11 @@ const Routes = function () {
 			// TODO: add 'Réception' Stack
 			return (
 				<NavigationContainer>
-					<Réception />
-				</NavigationContainer>
-			);
-		} else {
-			// TODO: add Protection Stack
-			return (
-				<NavigationContainer>
 					<Protection />
 				</NavigationContainer>
 			);
+		} else {
+			return <Chargement />;
 		}
 	}
 };
