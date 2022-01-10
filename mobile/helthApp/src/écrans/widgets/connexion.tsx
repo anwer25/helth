@@ -5,8 +5,6 @@ import {authContext} from '../../components/hooks/authProvider.tsx';
 // eslint-disable-next-line import/extensions,import/no-unresolved
 import styles from '../../ressources/styles';
 
-// TODO: add fire base athu
-
 const Connexion: React.FC = function () {
 	const [nom, définirNom] = useState<string>('');
 	const [mtp, définirMtp] = useState<string>('');

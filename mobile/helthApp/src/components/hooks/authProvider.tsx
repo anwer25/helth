@@ -1,7 +1,7 @@
 import React, {createContext, useState} from 'react';
-import {Alert} from 'react-native';
 import auth from '@react-native-firebase/auth';
 import {firebase} from '@react-native-firebase/firestore';
+import message from '../message';
 
 export const authContext = createContext({});
 
@@ -20,20 +20,31 @@ const AuthProvider = function ({children}) {
 				setUser,
 				setShowW,
 				login: async (email: string, password: string) => {
-					if (!email) {
-						console.error('email is empty');
+					let _email: string = email;
+					if (!_email) {
+						message("L'e-mail est vide", "Erreur dans l'e-mail");
 					} else if (!password) {
-						console.error('password is empty');
-					} else if (!email.includes('@')) {
-						console.error('inter valid email');
+						message(
+							'Le mot de passe est vide',
+							'Erreur dans le mot de passe',
+						);
+					} else if (!_email.includes('@')) {
+						message(
+							'Entrez une adresse email valide',
+							"Erreur dans l'e-mail",
+						);
 					} else {
+						if (_email.includes(' ')) {
+							_email = _email.replace(' ', '');
+						}
 						try {
 							await auth().signInWithEmailAndPassword(
-								email,
+								_email,
 								password,
 							);
 						} catch (e) {
-							Alert.alert(e, e);
+							// @ts-ignore
+							message(e, 'Error');
 						}
 					}
 				},
@@ -59,10 +70,10 @@ const AuthProvider = function ({children}) {
 							})
 							.then(() => console.log('ok'))
 							.catch(e => {
-								console.error(e);
+								message(e, 'base de données');
 							});
 					} catch (e) {
-						console.error(e);
+						message(e, 'Créer un utilisateur\n');
 					}
 				},
 				registerOp: async (nom: string, tel: string, role: string) => {
@@ -79,14 +90,17 @@ const AuthProvider = function ({children}) {
 							.then(async () => {
 								// eslint-disable-next-line no-return-await
 								try {
-									await fetch('', {
-										method: 'POST',
-										body: JSON.stringify({nom, tel}),
-										headers: {
-											'Content-type':
-												'application/json;charset=UTF-8',
+									await fetch(
+										'https://twilio-2117-dev.twil.io/addCaller',
+										{
+											method: 'POST',
+											body: JSON.stringify({nom, tel}),
+											headers: {
+												'Content-type':
+													'application/json;charset=UTF-8',
+											},
 										},
-									})
+									)
 										.then(responce => {
 											console.log(responce.json());
 										})
@@ -94,7 +108,7 @@ const AuthProvider = function ({children}) {
 											console.log(json);
 										})
 										.catch(err => {
-											console.log(err);
+											message(err, 'ajouter un numéro');
 										});
 								} catch (e) {
 									console.log(e);
@@ -107,27 +121,11 @@ const AuthProvider = function ({children}) {
 						console.error(e);
 					}
 				},
-				ajouterOperation: async (Nomber: string, etat: string) => {
-					try {
-						const db = firebase.firestore();
-						const dbQuery = await db
-							.collection('operation')
-							.add({N: Nomber, Etat: etat})
-							.then(() => {
-								console.log('ok');
-							})
-							.catch(e => {
-								console.error(e);
-							});
-					} catch (e) {
-						console.error(e);
-					}
-				},
 				logout: async () => {
 					try {
 						await auth().signOut();
 					} catch (e) {
-						console.error(e);
+						message(e, 'Erreur de déconnexion');
 					}
 				},
 			}}>
