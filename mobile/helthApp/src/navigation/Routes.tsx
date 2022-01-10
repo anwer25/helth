@@ -3,12 +3,12 @@ import React, {useContext, useEffect, useState} from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import auth from '@react-native-firebase/auth';
 import {firebase} from '@react-native-firebase/firestore';
+import {ruels, NavTheme} from '../ressources/utils/_varibales';
 import AuthStack from './authStack';
 import {authContext} from '../components/hooks/authProvider';
 import Chargement from '../components/chargement';
 import AdminStack from './adminStack';
 import Protection from '../écrans/Protection/protection';
-import Réception from '../écrans/Réception/réception';
 
 const Routes = function () {
 	// @ts-ignore
@@ -17,7 +17,6 @@ const Routes = function () {
 	const [initializing, setInitializing] = useState<boolean>(true);
 	const [data, setData] = useState('');
 	const db = firebase.firestore();
-	const ruels: Array<string> = ['Admin', 'Protection'];
 
 	// eslint-disable-next-line no-shadow
 	function onAuthStateChanged(user: any) {
@@ -58,7 +57,7 @@ const Routes = function () {
 	}
 	if (!user) {
 		return (
-			<NavigationContainer>
+			<NavigationContainer theme={NavTheme}>
 				<AuthStack />
 			</NavigationContainer>
 		);
@@ -66,12 +65,11 @@ const Routes = function () {
 		userData(user.uid);
 		if (data === ruels[0]) {
 			return (
-				<NavigationContainer>
+				<NavigationContainer theme={NavTheme}>
 					<AdminStack />
 				</NavigationContainer>
 			);
 		} else if (data === ruels[1]) {
-			// TODO: add 'Réception' Stack
 			return (
 				<NavigationContainer>
 					<Protection />

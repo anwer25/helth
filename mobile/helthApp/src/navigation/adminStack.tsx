@@ -13,16 +13,15 @@ const AdminStack = function () {
 		<Stack.Navigator
 			screenOptions={{
 				headerShown: false,
+				cardShadowEnabled: false,
 				cardStyle: {
 					backgroundColor: 'transparent',
 				},
 			}}>
 			<Stack.Screen name="admin" component={Admin} />
 			<Stack.Screen name="utilisateur" component={Utilisateur} />
-			<Stack.Screen name="opération" component={Opération} />
 			<Stack.Screen name="patient" component={Patient} />
 			<Stack.Screen name="journaux" component={Journaux} />
-			{/* <Stack.Screen name="ajouter" component={Ajouter} /> */}
 		</Stack.Navigator>
 	);
 };

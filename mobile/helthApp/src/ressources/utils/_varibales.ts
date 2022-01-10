@@ -1,3 +1,13 @@
+import {DefaultTheme} from '@react-navigation/native';
+
+const ruels: Array<string> = ['Admin', 'Protection'];
+const NavTheme = {
+	...DefaultTheme,
+	colors: {
+		...DefaultTheme.colors,
+		background: 'transparent',
+	},
+};
 const sexeNom: Array<Object> = [
 	{item: 'homme', id: 'HO'},
 	{item: 'femme', id: 'FE'},
@@ -61,4 +71,12 @@ const TypeDeBlessure: Array<Object> = [
 	},
 ];
 
-export {sexeNom, typeDeSang, ouiOuNon, typeAccident, TypeDeBlessure};
+export {
+	NavTheme,
+	ruels,
+	sexeNom,
+	typeDeSang,
+	ouiOuNon,
+	typeAccident,
+	TypeDeBlessure,
+};
