@@ -48,6 +48,7 @@ const AuthProvider = function ({children}) {
 						}
 					}
 				},
+				// TODO: fix data passing
 				register: async (
 					email: string,
 					mtp: string,
@@ -62,11 +63,9 @@ const AuthProvider = function ({children}) {
 							.collection('users')
 							.doc(auth().currentUser?.uid)
 							.set({
-								Name: nom,
-								UID: auth().currentUser?.uid,
-								email,
-								tel,
+								nom,
 								ruels: role,
+								tel,
 							})
 							.then(() => console.log('ok'))
 							.catch(e => {
@@ -76,6 +75,7 @@ const AuthProvider = function ({children}) {
 						message(e, 'Créer un utilisateur\n');
 					}
 				},
+				// TODO: fix data passing
 				registerOp: async (nom: string, tel: string, role: string) => {
 					try {
 						const db = firebase.firestore();
@@ -83,9 +83,9 @@ const AuthProvider = function ({children}) {
 							.collection('users')
 							.doc()
 							.set({
-								Name: nom,
-								tel,
+								nom,
 								ruels: role,
+								tel,
 							})
 							.then(async () => {
 								// eslint-disable-next-line no-return-await

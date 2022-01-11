@@ -2,7 +2,6 @@ import React from 'react';
 import {createStackNavigator} from '@react-navigation/stack';
 import Admin from '../écrans/Admin/admin';
 import Utilisateur from '../écrans/Admin/utilisateur';
-import Opération from '../écrans/Admin/opération';
 import Patient from '../écrans/Admin/Patient';
 import Journaux from '../écrans/Admin/journaux';
 
@@ -13,10 +12,6 @@ const AdminStack = function () {
 		<Stack.Navigator
 			screenOptions={{
 				headerShown: false,
-				cardShadowEnabled: false,
-				cardStyle: {
-					backgroundColor: 'transparent',
-				},
 			}}>
 			<Stack.Screen name="admin" component={Admin} />
 			<Stack.Screen name="utilisateur" component={Utilisateur} />

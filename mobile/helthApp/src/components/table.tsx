@@ -15,11 +15,7 @@ const TableView: React.FC<table> = function ({
 			<ScrollView>
 				<ScrollView horizontal={true}>
 					<Table borderStyle={{borderWidth: 1, borderColor: '#000'}}>
-						<Row
-							data={header}
-							widthArr={widthArr}
-							style={styles.textCenter}
-						/>
+						<Row data={header} widthArr={widthArr} />
 						<Rows data={data} widthArr={widthArr} />
 					</Table>
 				</ScrollView>

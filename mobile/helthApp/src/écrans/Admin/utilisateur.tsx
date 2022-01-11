@@ -1,10 +1,11 @@
 import React, {useContext, useEffect, useState} from 'react';
 import {Image, Text, TouchableOpacity, View} from 'react-native';
 import {authContext} from '../../components/hooks/authProvider';
-import styles from '../../ressources/styles';
-import {menu, utilisateurMenuLogo} from '../../ressources/images';
 import UseListData from '../../components/hooks/listView';
 import Ajouter from '../widgets/ajouter';
+import styles from '../../ressources/styles';
+import {menu, utilisateurMenuLogo} from '../../ressources/images';
+import {tableHeader} from '../../ressources/utils/_varibales';
 
 // @ts-ignore
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
@@ -14,7 +15,6 @@ const Utilisateur: React.FC = function ({navigation}) {
 	// @ts-ignore
 	// eslint-disable-next-line @typescript-eslint/no-unused-vars
 	const {logout, showW, setShowW} = useContext(authContext);
-	const tableHeader: Array<string> = ['Email', 'Autorisations', 'Nom', 'UID'];
 	useEffect(() => {}, []);
 	return (
 		<View style={[styles.container, styles.col]}>

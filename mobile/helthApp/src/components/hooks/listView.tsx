@@ -2,9 +2,10 @@ import React, {useEffect, useState} from 'react';
 import {View} from 'react-native';
 import {firebase} from '@react-native-firebase/firestore';
 import Chargement from '../chargement';
-
-import styles from '../../ressources/styles';
 import TableView from '../table';
+import message from '../message';
+import styles from '../../ressources/styles';
+import {widthArr} from '../../ressources/utils/_varibales';
 
 const UseListData: React.FC = function ({
 	collection,
@@ -12,25 +13,26 @@ const UseListData: React.FC = function ({
 }): JSX.Element {
 	const [loading, setLoading] = useState(true);
 	const [data, setData] = useState([]);
-	const widthArr: Array<number> = [180, 94, 100, 250];
 	useEffect(() => {
-		// TODO: fix side effect here
+		// @ts-ignore
 		const sync = (async function getData() {
 			try {
 				const firebaseStore = firebase.firestore();
-				const usersData = await firebaseStore
+				await firebaseStore
 					.collection(collection)
 					.get()
 					.then(querySnapShot => {
 						querySnapShot.forEach(snap => {
 							const dataArray = Object.values(snap.data());
+							// @ts-ignore
 							setData(prevData => [...prevData, dataArray]);
 						});
 					});
 				setLoading(false);
 			} catch (e) {
-				console.error(e);
+				console.error(message(e, 'Erreur de chargement des données'));
 			}
+			return sync;
 		})();
 	}, []);
 	if (loading) {

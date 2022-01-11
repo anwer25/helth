@@ -8,8 +8,6 @@ const AuthStack: React.FC = function () {
 		<Stack.Navigator
 			screenOptions={{
 				headerShown: false,
-				cardShadowEnabled: false,
-				cardStyle: {backgroundColor: 'transparent'},
 			}}
 			initialRouteName="connexion">
 			<Stack.Screen name="connexion" component={Connexion} />
