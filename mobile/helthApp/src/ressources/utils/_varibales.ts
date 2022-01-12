@@ -8,7 +8,7 @@ const NavTheme: object = {
 	},
 };
 const tableHeader: Array<string> = ['Nom', 'Tel', 'Autorisation'];
-const widthArr: Array<number> = [110, 80, 100, 250];
+const widthArr: Array<number> = [136, 136, 136];
 const ruels: Array<string> = ['Admin', 'Protection'];
 
 const sexeNom: Array<Object> = [

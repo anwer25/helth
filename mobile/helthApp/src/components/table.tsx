@@ -13,10 +13,18 @@ const TableView: React.FC<table> = function ({
 	return (
 		<View style={styles.container}>
 			<ScrollView>
-				<ScrollView horizontal={true}>
-					<Table borderStyle={{borderWidth: 1, borderColor: '#000'}}>
-						<Row data={header} widthArr={widthArr} />
-						<Rows data={data} widthArr={widthArr} />
+				<ScrollView>
+					<Table borderStyle={{borderWidth: 1, borderColor: '#fff'}}>
+						<Row
+							data={header}
+							widthArr={widthArr}
+							style={styles.tableHead}
+						/>
+						<Rows
+							data={data}
+							widthArr={widthArr}
+							style={styles.tableText}
+						/>
 					</Table>
 				</ScrollView>
 			</ScrollView>
