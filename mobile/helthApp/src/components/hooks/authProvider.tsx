@@ -52,19 +52,19 @@ const AuthProvider = function ({children}) {
 				register: async (
 					email: string,
 					mtp: string,
-					nom: string,
+					Nom: string,
+					Role: string,
 					tel: string,
-					role: string,
 				) => {
 					try {
 						await auth().createUserWithEmailAndPassword(email, mtp);
 						const db = firebase.firestore();
-						const dbQuery = await db
+						await db
 							.collection('users')
 							.doc(auth().currentUser?.uid)
 							.set({
-								nom,
-								ruels: role,
+								nom: Nom,
+								role: Role,
 								tel,
 							})
 							.then(() => console.log('ok'))
@@ -76,15 +76,15 @@ const AuthProvider = function ({children}) {
 					}
 				},
 				// TODO: fix data passing
-				registerOp: async (nom: string, tel: string, role: string) => {
+				registerOp: async (nom: string, Role: string, tel: string) => {
 					try {
 						const db = firebase.firestore();
-						const dbQuery = await db
+						await db
 							.collection('users')
 							.doc()
 							.set({
 								nom,
-								ruels: role,
+								Role,
 								tel,
 							})
 							.then(async () => {

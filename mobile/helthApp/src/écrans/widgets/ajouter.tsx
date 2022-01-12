@@ -20,21 +20,17 @@ const Ajouter: React.FC = function (): JSX.Element {
 			transparent={false}
 			visible={showW}
 			onRequestClose={() => setShowW(!showW)}>
-			<View style={[styles.container, styles.row, styles.center]}>
+			<View
+				style={[
+					styles.container,
+					styles.row,
+					styles.center,
+					styles.modalBg,
+				]}>
 				<View
 					style={[styles.container, styles.row, styles.alignCenter]}>
 					<View style={[styles.container, styles.col]}>
 						<Text>Autorisation: </Text>
-						<Text>Nom: </Text>
-						{elémentSélectionné === role[0] ? (
-							<>
-								<Text>Email: </Text>
-								<Text>Mot de pass: </Text>
-								<Text>Mot de pass: </Text>
-							</>
-						) : (
-							<Text>Tel :</Text>
-						)}
 					</View>
 					<View style={[styles.container, styles.col]}>
 						{/* @ts-ignore */}
@@ -73,16 +69,25 @@ const Ajouter: React.FC = function (): JSX.Element {
 					styles.row,
 					styles.justifySpaceBet,
 					styles.alignEnd,
+					styles.modalBg,
 				]}>
 				<Pressable onPress={() => setShowW(!showW)}>
 					<Text>Fermer</Text>
 				</Pressable>
 				<Pressable
-					onPress={() =>
+					onPress={() => {
+						const tempTel =
+							elémentSélectionné === role[0] ? 'Vide' : tel;
 						elémentSélectionné === role[0]
-							? register(email, mtp, nom, elémentSélectionné, tel)
-							: registerOp(nom, tel, elémentSélectionné)
-					}>
+							? register(
+									email,
+									mtp,
+									nom,
+									elémentSélectionné,
+									tempTel,
+							  )
+							: registerOp(nom, elémentSélectionné, tempTel);
+					}}>
 					<Text>Sauvegarder</Text>
 				</Pressable>
 			</View>

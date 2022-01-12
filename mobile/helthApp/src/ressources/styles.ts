@@ -136,6 +136,24 @@ const Styles = StyleSheet.create({
 		height: 300,
 		width: 300,
 	},
+	tableHead: {
+		height: 40,
+		backgroundColor: 'rgba(43, 128, 186, 0.8)',
+		marginTop: 0,
+		marginBottom: 0,
+		marginLeft: 6,
+		marginRight: 6,
+	},
+
+	tableText: {
+		marginTop: 0,
+		marginBottom: 0,
+		marginLeft: 6,
+		marginRight: 6,
+	},
+	modalBg: {
+		backgroundColor: 'rgba(53, 157, 229, 0.8)',
+	},
 });
 
 export default Styles;
