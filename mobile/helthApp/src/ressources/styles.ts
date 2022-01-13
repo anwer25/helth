@@ -90,6 +90,16 @@ const Styles = StyleSheet.create({
 		width: 200,
 		borderRadius: 120,
 	},
+	buttonA: {
+		backgroundColor: 'rgba(53, 157, 229, 0.8)',
+		margin: 10,
+		padding: 8,
+		borderBottomColor: '#C8C8C8',
+		borderLeftColor: '#C8C8C8',
+		borderRightColor: '#C8C8C8',
+		borderTopColor: '#C8C8C8',
+		borderWidth: 1,
+	},
 	navButton: {
 		backgroundColor: '#fff',
 		padding: 5,
@@ -153,6 +163,23 @@ const Styles = StyleSheet.create({
 	},
 	modalBg: {
 		backgroundColor: 'rgba(53, 157, 229, 0.8)',
+	},
+	textInput: {
+		color: '#000',
+		margin: 4,
+		borderBottomColor: '#C8C8C8',
+		borderLeftColor: '#C8C8C8',
+		borderRightColor: '#C8C8C8',
+		borderTopColor: '#C8C8C8',
+		borderWidth: 1,
+		shadowColor: '#171717',
+		shadowOffset: {
+			width: 1,
+			height: 0,
+		},
+		shadowOpacity: 0.8,
+		shadowRadius: 10,
+		elevation: 0,
 	},
 });
 

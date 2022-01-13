@@ -10,12 +10,16 @@ const NavTheme: object = {
 const tableHeader: Array<string> = ['Nom', 'Tel', 'Autorisation'];
 const widthArr: Array<number> = [136, 136, 136];
 const ruels: Array<string> = ['Admin', 'Protection'];
+const role: Array<object> = [
+	{item: 'Protection', id: 'Prot'},
+	{item: 'Réception', id: 'Recp'},
+];
 
-const sexeNom: Array<Object> = [
+const sexeNom: Array<object> = [
 	{item: 'homme', id: 'HO'},
 	{item: 'femme', id: 'FE'},
 ];
-const typeDeSang: Array<Object> = [
+const typeDeSang: Array<object> = [
 	{item: 'O-', id: 'O-'},
 	{item: 'O+', id: 'O+'},
 	{item: 'B+', id: 'B+'},
@@ -25,19 +29,19 @@ const typeDeSang: Array<Object> = [
 	{item: 'AB+', id: 'AB+'},
 	{item: 'Autre', id: 'AU'},
 ];
-const ouiOuNon: Array<Object> = [
+const ouiOuNon: Array<object> = [
 	{item: 'Non', id: 'Non'},
 	{item: 'Oui', id: 'Oui'},
 ];
 
-const typeAccident: Array<Object> = [
+const typeAccident: Array<object> = [
 	{item: 'accidents de la route', id: 'RO'},
 	{item: 'accidents domestiques', id: 'DO'},
 	{item: 'accidents du travail', id: 'TR'},
 	{item: 'Autre', id: 'AU'},
 ];
 
-const TypeDeBlessure: Array<Object> = [
+const TypeDeBlessure: Array<object> = [
 	{item: 'Entorse', id: 'En'},
 	{item: 'Fracture', id: 'Fr'},
 	{
@@ -79,6 +83,7 @@ export {
 	tableHeader,
 	widthArr,
 	ruels,
+	role,
 	sexeNom,
 	typeDeSang,
 	ouiOuNon,
