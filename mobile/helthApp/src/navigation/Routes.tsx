@@ -28,7 +28,7 @@ const Routes = function () {
 	const userData = async (id: string) => {
 		try {
 			// eslint-disable-next-line @typescript-eslint/no-unused-vars
-			const dbQery: void = await db
+			await db
 				.collection('users')
 				.doc(id)
 				.get()
@@ -38,7 +38,7 @@ const Routes = function () {
 						setData(ruels[0]);
 					} else {
 						// @ts-ignore
-						setData(QuerySnapShot.data().ruels);
+						setData(QuerySnapShot.data().role);
 					}
 				})
 				.catch(e => console.error(`error in promise catch ${e}`));

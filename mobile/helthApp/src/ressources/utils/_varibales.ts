@@ -13,6 +13,7 @@ const widthArr: Array<number> = [136, 136, 136];
 const widthP: Array<number> = [200, 200];
 const ruels: Array<string> = ['Admin', 'Protection'];
 const role: Array<object> = [
+	{item: 'Admin', id: 'Ad'},
 	{item: 'Protection', id: 'Prot'},
 	{item: 'Réception', id: 'Recp'},
 ];
