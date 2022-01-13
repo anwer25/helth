@@ -158,7 +158,7 @@ export const handler = (
 					.then((Result) => {
 						console.log(Result);
 						firebaseApp
-							.history(event)
+							.history(JSON.parse(messageTemp))
 							.then((result) => console.log(result))
 							.catch((error) => console.error(error));
 
