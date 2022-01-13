@@ -5,7 +5,7 @@ import UseListData from '../../components/hooks/listView';
 import Ajouter from '../widgets/ajouter';
 import styles from '../../ressources/styles';
 import {menu, utilisateurMenuLogo} from '../../ressources/images';
-import {tableHeader} from '../../ressources/utils/_varibales';
+import {tableHeader, widthArr} from '../../ressources/utils/_varibales';
 
 // @ts-ignore
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
@@ -73,7 +73,11 @@ const Utilisateur: React.FC = function ({navigation}) {
 			<View style={[styles.flexLg]}>
 				<Ajouter />
 				{/* @ts-ignore */}
-				<UseListData collection="users" tableHeader={tableHeader} />
+				<UseListData
+					collection="users"
+					tableHeader={tableHeader}
+					width={widthArr}
+				/>
 			</View>
 		</View>
 	);
