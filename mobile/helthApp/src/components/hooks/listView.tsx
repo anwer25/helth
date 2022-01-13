@@ -5,11 +5,11 @@ import Chargement from '../chargement';
 import TableView from '../table';
 import message from '../message';
 import styles from '../../ressources/styles';
-import {widthArr} from '../../ressources/utils/_varibales';
 
 const UseListData: React.FC = function ({
 	collection,
 	tableHeader,
+	width,
 }): JSX.Element {
 	const [loading, setLoading] = useState(true);
 	const [data, setData] = useState([]);
@@ -40,11 +40,7 @@ const UseListData: React.FC = function ({
 	} else {
 		return (
 			<View style={styles.container}>
-				<TableView
-					header={tableHeader}
-					data={data}
-					widthArr={widthArr}
-				/>
+				<TableView header={tableHeader} data={data} widthArr={width} />
 			</View>
 		);
 	}

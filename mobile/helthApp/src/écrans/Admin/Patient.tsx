@@ -4,6 +4,7 @@ import {authContext} from '../../components/hooks/authProvider';
 import styles from '../../ressources/styles';
 import {menu, patient} from '../../ressources/images';
 import UseListData from '../../components/hooks/listView';
+import {tableHeaderP, widthP} from '../../ressources/utils/_varibales';
 
 const Patient: React.FC = function () {
 	const [shouldShow, setShow] = useState(false);
@@ -11,12 +12,6 @@ const Patient: React.FC = function () {
 	const [shouldShowOptions, setShouldShowOptions] = useState(false);
 	// @ts-ignore
 	const {logout} = useContext(authContext);
-	const tableHeader: Array<string> = [
-		'Nome',
-		'CIN',
-		'salle de operation',
-		'état',
-	];
 	return (
 		<View style={[styles.container, styles.col]}>
 			<View
@@ -55,7 +50,11 @@ const Patient: React.FC = function () {
 			{/* TODO: add list here from fireBase dataBase */}
 			<View style={[styles.flexLg]}>
 				{/* @ts-ignore */}
-				<UseListData collection="patient" tableHeader={tableHeader} />
+				<UseListData
+					collection="patient"
+					tableHeader={tableHeaderP}
+					width={widthP}
+				/>
 			</View>
 		</View>
 	);
