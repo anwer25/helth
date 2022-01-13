@@ -1,8 +1,9 @@
 import React, {useContext, useState} from 'react';
 import {Modal, Pressable, Text, TextInput, View} from 'react-native';
-import SelectDropdown from 'react-native-select-dropdown';
+import SelectBox from 'react-native-multi-selectbox-typescript';
 import {authContext} from '../../components/hooks/authProvider';
 import styles from '../../ressources/styles';
+import {role} from '../../ressources/utils/_varibales';
 
 const Ajouter: React.FC = function (): JSX.Element {
 	const [elémentSélectionné, définirSélectionné] = useState('');
@@ -12,7 +13,6 @@ const Ajouter: React.FC = function (): JSX.Element {
 	const [tel, definiTel] = useState('');
 	const {showW, setShowW, register, registerOp} = useContext(authContext);
 
-	const role = ['Protection', 'Réception'];
 	return (
 		<Modal
 			animationType="slide"
@@ -30,34 +30,38 @@ const Ajouter: React.FC = function (): JSX.Element {
 				<View
 					style={[styles.container, styles.row, styles.alignCenter]}>
 					<View style={[styles.container, styles.col]}>
-						<Text>Autorisation: </Text>
-					</View>
-					<View style={[styles.container, styles.col]}>
 						{/* @ts-ignore */}
-						<SelectDropdown
-							data={role}
-							onSelect={elément => définirSélectionné(elément)}
-							buttonTextAfterSelection={elément => elément}
+						<SelectBox
+							label="Autorisation :"
+							options={role}
+							value={elémentSélectionné}
+							onChange={définirSélectionné}
+							hideInputFilter={false}
+							inputPlaceholder="Sélectionner "
 						/>
 						<TextInput
 							placeholder="Nom"
 							onChangeText={definirNom}
+							style={styles.textInput}
 						/>
 						{elémentSélectionné === role[0] ? (
 							<>
 								<TextInput
 									placeholder="Email"
 									onChangeText={definirEmail}
+									style={styles.textInput}
 								/>
 								<TextInput
 									placeholder="Mot de pass"
 									onChangeText={definirMtp}
+									style={styles.textInput}
 								/>
 							</>
 						) : (
 							<TextInput
 								placeholder="Tel"
 								onChangeText={definiTel}
+								style={styles.textInput}
 							/>
 						)}
 					</View>
@@ -71,10 +75,13 @@ const Ajouter: React.FC = function (): JSX.Element {
 					styles.alignEnd,
 					styles.modalBg,
 				]}>
-				<Pressable onPress={() => setShowW(!showW)}>
+				<Pressable
+					style={styles.buttonA}
+					onPress={() => setShowW(!showW)}>
 					<Text>Fermer</Text>
 				</Pressable>
 				<Pressable
+					style={styles.buttonA}
 					onPress={() => {
 						const tempTel =
 							elémentSélectionné === role[0] ? 'Vide' : tel;
