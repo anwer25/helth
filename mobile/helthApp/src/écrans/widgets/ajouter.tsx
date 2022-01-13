@@ -3,10 +3,13 @@ import {Modal, Pressable, Text, TextInput, View} from 'react-native';
 import SelectBox from 'react-native-multi-selectbox-typescript';
 import {authContext} from '../../components/hooks/authProvider';
 import styles from '../../ressources/styles';
-import {role} from '../../ressources/utils/_varibales';
+import {role, ruels} from '../../ressources/utils/_varibales';
 
 const Ajouter: React.FC = function (): JSX.Element {
-	const [elémentSélectionné, définirSélectionné] = useState('');
+	const [elémentSélectionné, définirSélectionné] = useState({
+		item: 'Protection',
+		id: 'Prot',
+	});
 	const [nom, definirNom] = useState('');
 	const [email, definirEmail] = useState('');
 	const [mtp, definirMtp] = useState('');
@@ -44,7 +47,8 @@ const Ajouter: React.FC = function (): JSX.Element {
 							onChangeText={definirNom}
 							style={styles.textInput}
 						/>
-						{elémentSélectionné === role[0] ? (
+						{elémentSélectionné.item === ruels[0] ||
+						elémentSélectionné.item === ruels[1] ? (
 							<>
 								<TextInput
 									placeholder="Email"
@@ -83,17 +87,22 @@ const Ajouter: React.FC = function (): JSX.Element {
 				<Pressable
 					style={styles.buttonA}
 					onPress={() => {
-						const tempTel =
-							elémentSélectionné === role[0] ? 'Vide' : tel;
-						elémentSélectionné === role[0]
-							? register(
-									email,
-									mtp,
-									nom,
-									elémentSélectionné,
-									tempTel,
-							  )
-							: registerOp(nom, elémentSélectionné, tempTel);
+						if (
+							elémentSélectionné.item === ruels[0] ||
+							elémentSélectionné.item === ruels[1]
+						) {
+							const tempTel = 'Vide';
+							register(
+								email,
+								mtp,
+								nom,
+								elémentSélectionné.item,
+								tempTel,
+							);
+						} else {
+							const tempTel = tel;
+							registerOp(nom, elémentSélectionné.item, tempTel);
+						}
 					}}>
 					<Text>Sauvegarder</Text>
 				</Pressable>

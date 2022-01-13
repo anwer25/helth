@@ -48,7 +48,6 @@ const AuthProvider = function ({children}) {
 						}
 					}
 				},
-				// TODO: fix data passing
 				register: async (
 					email: string,
 					mtp: string,
@@ -78,10 +77,11 @@ const AuthProvider = function ({children}) {
 				// TODO: fix data passing
 				registerOp: async (nom: string, Role: string, tel: string) => {
 					try {
+						await auth().signInAnonymously();
 						const db = firebase.firestore();
 						await db
 							.collection('users')
-							.doc()
+							.doc(auth().currentUser?.uid)
 							.set({
 								nom,
 								Role,
@@ -108,7 +108,7 @@ const AuthProvider = function ({children}) {
 											console.log(json);
 										})
 										.catch(err => {
-											message(err, 'ajouter un numéro');
+											message(err, 'Ajouter un numéro');
 										});
 								} catch (e) {
 									console.log(e);
