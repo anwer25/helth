@@ -74,7 +74,6 @@ const AuthProvider = function ({children}) {
 						message(e, 'Créer un utilisateur\n');
 					}
 				},
-				// TODO: fix data passing
 				registerOp: async (nom: string, Role: string, tel: string) => {
 					try {
 						await auth().signInAnonymously();

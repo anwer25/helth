@@ -2,7 +2,7 @@ import React, {useContext, useState} from 'react';
 import {Image, Text, TouchableOpacity, View} from 'react-native';
 import {authContext} from '../../components/hooks/authProvider';
 import styles from '../../ressources/styles';
-import {journaux, menu, user, users} from '../../ressources/images';
+import {menu, user, users} from '../../ressources/images';
 
 // @ts-ignore
 const Admin: React.FC = function ({navigation}) {
@@ -44,14 +44,6 @@ const Admin: React.FC = function ({navigation}) {
 						onPress={() => navigation.navigate('patient')}>
 						<Image source={user} style={[styles.buttonLogo]} />
 						<Text>Patient</Text>
-					</TouchableOpacity>
-				</View>
-				<View style={[styles.row]}>
-					<TouchableOpacity
-						style={[styles.alignCenter, styles.menuButton]}
-						onPress={() => navigation.navigate('journaux')}>
-						<Image source={journaux} style={[styles.buttonLogo]} />
-						<Text>Journaux</Text>
 					</TouchableOpacity>
 				</View>
 			</View>

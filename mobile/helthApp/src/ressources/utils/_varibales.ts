@@ -8,9 +8,8 @@ const NavTheme: object = {
 	},
 };
 const tableHeader: Array<string> = ['Nom', 'Tel', 'Autorisation'];
-const tableHeaderP: Array<string> = ['Nome', 'CIN'];
+const tableHeaderP: Array<string> = ['Nome', 'Prenome', 'CIN'];
 const widthArr: Array<number> = [136, 136, 136];
-const widthP: Array<number> = [200, 200];
 const ruels: Array<string> = ['Admin', 'Protection'];
 const role: Array<object> = [
 	{item: 'Admin', id: 'Ad'},
@@ -85,7 +84,6 @@ export {
 	NavTheme,
 	tableHeader,
 	tableHeaderP,
-	widthP,
 	widthArr,
 	ruels,
 	role,
