@@ -112,7 +112,7 @@ export const handler = (
 	firebaseApp.getPhoneNumber().then((e) => {
 		_.each(e, (element: object) => {
 			// @ts-ignore
-			if (typeof element.tel === 'undefined') {
+			if (typeof element.tel === 'undefined' || element.tel === 'Vide') {
 				console.log('pass');
 			} else {
 				// @ts-ignore

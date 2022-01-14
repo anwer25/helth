@@ -2,7 +2,7 @@ import React, {useState, useContext} from 'react';
 import {View, Text, TouchableOpacity, Image} from 'react-native';
 import {authContext} from '../../components/hooks/authProvider';
 import styles from '../../ressources/styles';
-import {opération, menu} from '../../ressources/images';
+import {protection, menu} from '../../ressources/images';
 import Données from '../../components/données';
 import Chargement from '../../components/chargement';
 
@@ -28,8 +28,7 @@ const Protection: React.FC = function (): JSX.Element {
 							setShow(false);
 							setShouldShowOptions(!shouldShowOptions);
 						}}>
-						{/* TODO: fix logo title from figma */}
-						<Image source={opération} style={{marginLeft: -14}} />
+						<Image source={protection} style={{marginLeft: -14}} />
 					</TouchableOpacity>
 				</View>
 				<View>

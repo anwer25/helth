@@ -2,6 +2,7 @@ import React, {useContext} from 'react';
 import {Text, View, Pressable} from 'react-native';
 import {API} from '../ressources/utils/types';
 import {authContext} from './hooks/authProvider';
+import styles from '../ressources/styles';
 
 const Button: React.FC = function Object<String>({
 	nom,
@@ -47,7 +48,9 @@ const Button: React.FC = function Object<String>({
 	return (
 		<View>
 			<Pressable
+				style={styles.buttonA}
 				onPress={() => {
+					console.log(blessure);
 					serverAPI({
 						nom,
 						prenom,
@@ -59,7 +62,7 @@ const Button: React.FC = function Object<String>({
 						blessure: blessure.item,
 					});
 				}}>
-				<Text>Hello</Text>
+				<Text>Envoyer</Text>
 			</Pressable>
 		</View>
 	);
