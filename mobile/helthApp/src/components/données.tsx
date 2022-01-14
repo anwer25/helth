@@ -1,6 +1,5 @@
 import React, {useState} from 'react';
 import {TextInput, View} from 'react-native';
-import {xorBy} from 'lodash';
 import Button from './sendButton';
 // @ts-ignore
 import styles from '../ressources/styles';
@@ -15,11 +14,6 @@ const Données: React.FC = function (): JSX.Element {
 	const [sang, Sang] = useState('');
 	const [donneur, Donneur] = useState('');
 	const [accident, Accident] = useState('');
-	const [blessure, Blessure] = useState([]);
-	function multiChange() {
-		// @ts-ignore
-		return (item: any) => Blessure(xorBy(blessure, [item], 'id'));
-	}
 	return (
 		<View style={[styles.container, styles.col]}>
 			<TextInput
@@ -36,6 +30,7 @@ const Données: React.FC = function (): JSX.Element {
 			/>
 			<TextInput
 				value={cin}
+				keyboardType="number-pad"
 				onChangeText={CIN}
 				placeholder="CIN"
 				style={styles.textInput}
@@ -49,8 +44,6 @@ const Données: React.FC = function (): JSX.Element {
 				onChange2={(val: React.SetStateAction<string>) => Sang(val)}
 				value3={accident}
 				onChange3={(val: React.SetStateAction<string>) => Accident(val)}
-				selectedValues={blessure}
-				onMultiSelect={multiChange()}
 			/>
 			<View>
 				<Button
@@ -61,7 +54,6 @@ const Données: React.FC = function (): JSX.Element {
 					sang={sang}
 					donneur={donneur}
 					accident={accident}
-					blessure={blessure}
 				/>
 			</View>
 		</View>

@@ -16,7 +16,6 @@ export interface API {
 		donneur: string;
 		reveillee: string;
 		accident: string;
-		blessure: string;
 	};
 }
 
@@ -29,6 +28,4 @@ export interface CaseProp {
 	onChange2: (val: React.SetStateAction<string>) => void;
 	value3: string;
 	onChange3: (val: React.SetStateAction<string>) => void;
-	selectedValues: string[];
-	onMultiSelect: (item: string) => void;
 }

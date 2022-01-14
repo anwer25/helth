@@ -43,43 +43,6 @@ const typeAccident: Array<object> = [
 	{item: 'Autre', id: 'AU'},
 ];
 
-const TypeDeBlessure: Array<object> = [
-	{item: 'Entorse', id: 'En'},
-	{item: 'Fracture', id: 'Fr'},
-	{
-		item: 'Claquage',
-		id: 'CL',
-	},
-	{
-		item: 'élongation',
-		id: 'Él',
-	},
-	{
-		item: 'Tendinite',
-		id: 'Te',
-	},
-	{
-		item: 'Lésions du genou',
-		id: 'Le',
-	},
-	{
-		item: 'Professionnels à consulter',
-		id: 'Pro',
-	},
-	{
-		item: "L'entorse",
-		id: 'Le',
-	},
-	{
-		item: 'Souvent bénignes',
-		id: 'Souv',
-	},
-	{
-		item: 'les entorses peuvent concerner',
-		id: 'Entorses',
-	},
-];
-
 export {
 	NavTheme,
 	tableHeader,
@@ -91,5 +54,4 @@ export {
 	typeDeSang,
 	ouiOuNon,
 	typeAccident,
-	TypeDeBlessure,
 };

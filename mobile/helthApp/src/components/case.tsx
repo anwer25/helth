@@ -5,7 +5,6 @@ import {
 	ouiOuNon,
 	sexeNom,
 	typeAccident,
-	TypeDeBlessure,
 	typeDeSang,
 } from '../ressources/utils/_varibales';
 import {CaseProp} from '../ressources/utils/types';
@@ -17,8 +16,6 @@ const Case = function (props: CaseProp) {
 		value3,
 		value2,
 		value1,
-		onMultiSelect,
-		selectedValues,
 		onChange3,
 		onChange2,
 		onChange1,
@@ -56,15 +53,6 @@ const Case = function (props: CaseProp) {
 				onChange={onChange3}
 				hideInputFilter={false}
 				inputPlaceholder="Sélectionner "
-			/>
-			<SelectBox
-				label="Type de blessure :"
-				options={TypeDeBlessure}
-				selectedValues={selectedValues}
-				onMultiSelect={onMultiSelect}
-				onTapClose={onMultiSelect}
-				inputPlaceholder="Sélectionner "
-				isMulti
 			/>
 		</View>
 	);

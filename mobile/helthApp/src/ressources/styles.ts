@@ -181,6 +181,9 @@ const Styles = StyleSheet.create({
 		shadowRadius: 10,
 		elevation: 0,
 	},
+	centerText: {
+		textAlign: 'center',
+	},
 });
 
 export default Styles;

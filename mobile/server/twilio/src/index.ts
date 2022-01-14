@@ -142,17 +142,8 @@ export const handler = (
 					? // @ts-ignore
 					  event.accident
 					: '';
-				// eslint-disable-next-line no-prototype-builtins
-				let blessure = event.hasOwnProperty('blessure')
-					? // @ts-ignore
-					  event.blessure
-					: '';
-				// eslint-disable-next-line no-prototype-builtins
-				if (Array.isArray(blessure)) {
-					blessure = blessure.toString();
-				}
 
-				const messageTemp = `Nom: ${Nom}\nPrénome: ${Prenome}\nCin: ${cin}\nSexe: ${sexe}\nDonneur: ${donneur}\nSang: ${sang}\nAccident: ${accident}\nBlessure: ${blessure}`;
+				const messageTemp = `Nom: ${Nom}\nPrénome: ${Prenome}\nCin: ${cin}\nSexe: ${sexe}\nDonneur: ${donneur}\nSang: ${sang}\nAccident: ${accident}`;
 				// @ts-ignore
 				message // @ts-ignore
 					.messageSender(messageTemp, element.tel)
