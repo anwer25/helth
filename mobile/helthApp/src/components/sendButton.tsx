@@ -4,7 +4,7 @@ import {API} from '../ressources/utils/types';
 import {authContext} from './hooks/authProvider';
 import styles from '../ressources/styles';
 
-const Button: React.FC = function Object<String>({
+const Button: React.FC = function object<String>({
 	nom,
 	prenom,
 	cin,
@@ -12,13 +12,11 @@ const Button: React.FC = function Object<String>({
 	sang,
 	donneur,
 	accident,
-	blessure,
 }): JSX.Element {
 	const {setLoading} = useContext(authContext);
 	function serverAPI(data: API): void {
 		// eslint-disable-next-line @typescript-eslint/no-unused-vars
 		(async function sender(): Promise<void> {
-			console.log(`from sender: ${data}`);
 			setLoading(true);
 			// eslint-disable-next-line @typescript-eslint/no-unused-vars
 			const _sender = await fetch(
@@ -50,7 +48,6 @@ const Button: React.FC = function Object<String>({
 			<Pressable
 				style={styles.buttonA}
 				onPress={() => {
-					console.log(blessure);
 					serverAPI({
 						nom,
 						prenom,
@@ -59,10 +56,9 @@ const Button: React.FC = function Object<String>({
 						donneur: donneur.item,
 						sang: sang.item,
 						accident: accident.item,
-						blessure: blessure.item,
 					});
 				}}>
-				<Text>Envoyer</Text>
+				<Text style={styles.textCenter}>Envoyer</Text>
 			</Pressable>
 		</View>
 	);
