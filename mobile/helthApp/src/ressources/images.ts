@@ -8,8 +8,6 @@ const users = require('./images/group-of-users1.png');
 const menu = require('./images/pngwing.png');
 const utilisateurMenuLogo = require('./images/menu1.png');
 const patient = require('./images/patient.png');
-const _journaux = require('./images/journaux.png');
-const opération = require('./images/opération.png');
 
 export {
 	backgroundImage,
@@ -22,6 +20,4 @@ export {
 	menu,
 	utilisateurMenuLogo,
 	patient,
-	_journaux,
-	opération,
 };
