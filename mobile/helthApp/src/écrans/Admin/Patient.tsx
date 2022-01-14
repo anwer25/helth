@@ -4,7 +4,7 @@ import {authContext} from '../../components/hooks/authProvider';
 import styles from '../../ressources/styles';
 import {menu, patient} from '../../ressources/images';
 import UseListData from '../../components/hooks/listView';
-import {tableHeaderP, widthP} from '../../ressources/utils/_varibales';
+import {tableHeaderP, widthArr} from '../../ressources/utils/_varibales';
 
 const Patient: React.FC = function () {
 	const [shouldShow, setShow] = useState(false);
@@ -53,7 +53,7 @@ const Patient: React.FC = function () {
 				<UseListData
 					collection="patient"
 					tableHeader={tableHeaderP}
-					width={widthP}
+					width={widthArr}
 				/>
 			</View>
 		</View>

@@ -62,7 +62,7 @@ class Firebase {
 	}
 
 	public async history(log: object) {
-		const collection = this.fireStore.collection('log');
+		const collection = this.fireStore.collection('patient');
 		const data = await collection
 			.add({
 				...log,
@@ -110,7 +110,8 @@ export const handler = (
 	const message = new MessageServer();
 	const firebaseApp = new Firebase();
 	firebaseApp.getPhoneNumber().then((e) => {
-		_.each(e, (element: any | object) => {
+		_.each(e, (element: object) => {
+			// @ts-ignore
 			if (typeof element.tel === 'undefined') {
 				console.log('pass');
 			} else {
@@ -152,13 +153,18 @@ export const handler = (
 				}
 
 				const messageTemp = `Nom: ${Nom}\nPrénome: ${Prenome}\nCin: ${cin}\nSexe: ${sexe}\nDonneur: ${donneur}\nSang: ${sang}\nAccident: ${accident}\nBlessure: ${blessure}`;
-				message
+				// @ts-ignore
+				message // @ts-ignore
 					.messageSender(messageTemp, element.tel)
 					// eslint-disable-next-line no-lone-blocks
 					.then((Result) => {
 						console.log(Result);
 						firebaseApp
-							.history(JSON.parse(messageTemp))
+							.history({
+								Nom,
+								Prenome,
+								cin,
+							})
 							.then((result) => console.log(result))
 							.catch((error) => console.error(error));
 
