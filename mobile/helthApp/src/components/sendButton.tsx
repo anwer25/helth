@@ -20,7 +20,7 @@ const Button: React.FC = function object<String>({
 			setLoading(true);
 			// eslint-disable-next-line @typescript-eslint/no-unused-vars
 			const _sender = await fetch(
-				'https://twilio-2117-dev.twil.io/index',
+				"",
 				{
 					method: 'POST',
 					body: JSON.stringify(data),
