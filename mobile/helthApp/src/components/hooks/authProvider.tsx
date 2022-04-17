@@ -90,7 +90,7 @@ const AuthProvider = function ({children}) {
 								// eslint-disable-next-line no-return-await
 								try {
 									await fetch(
-										'https://twilio-2117-dev.twil.io/addCaller',
+										"",
 										{
 											method: 'POST',
 											body: JSON.stringify({nom, tel}),
